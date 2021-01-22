@@ -1,0 +1,32 @@
+<!--Imputs y Outputs-->
+<!--En este caso Contact es el componente "Padre" de Slider "Hijo"-->
+<div class="container">
+    <h1>Contacto</h1>
+
+    <div id="texto" #textos>
+        <p appResaltado>
+            Esta es la pagina de contacto contacto puedes enviarnos cualquier duda
+        </p>
+    </div>
+
+    <!--CAmbiar a un componente llamado galeria-->
+    
+        Tamaño del Slider:
+        <input type="number" [(ngModel)]="widthSlider" (keyup.enter)="cargarSlider()"/>              <!--El evento  (keyup.enter)="cargarSlider()" es para que funcione el input al presionar enter de lo contrario el slider reacciona solo al primer numero introducido y no al numero completo-->
+    <button (click)="cargarSlider()">Cargar Slider</button>
+        <button (click)="resetearSlider()">Reset Slider</button>
+
+        <div *ngIf="anchuraToSlider">
+        
+            <slider [anchura]="anchuraToSlider"
+                    [etiquetas]="captions"
+                    (conseguirAutor)="getAutor($event)"
+            ></slider>                     <!--en slider.component.ts se pone por default el selector: 'app-slider' para este ejercicio se cambio a 'slider'-->
+         {{autor.nombre}}<br/>
+            {{autor.website}}<br/>
+            {{autor.twitter}}
+        </div>
+    
+ 
+
+</div>
