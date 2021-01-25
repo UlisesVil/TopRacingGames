@@ -7,6 +7,8 @@ import { routing, appRoutingProviders } from './app-routing';
 
 
 import { AppComponent } from './app.component';
+import { LoginComponent } from './components/login/login.component';
+import { RegisterComponent } from './components/register/register.component';
 import { AboutComponent } from './components/about/about.component';
 import { ProjectsComponent } from './components/projects/projects.component';
 import { CreateComponent } from './components/create/create.component';
@@ -16,6 +18,7 @@ import { DetailComponent } from './components/detail/detail.component';
 import { EditComponent } from './components/edit/edit.component';
 import { SliderComponent } from './components/slider/slider.component';
 import { ResaltadoDirective } from './resaltado.directive';
+
 
 //import * as $ from 'jquery';
 
@@ -32,7 +35,9 @@ import { ResaltadoDirective } from './resaltado.directive';
     DetailComponent,
     EditComponent,
     SliderComponent,
-    ResaltadoDirective
+    ResaltadoDirective,
+    LoginComponent,
+    RegisterComponent
   ],
   imports: [
     BrowserModule,

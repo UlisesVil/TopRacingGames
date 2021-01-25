@@ -1,6 +1,9 @@
 import { ModuleWithProviders } from '@angular/core'; //este import esta deprecated al final de este archivo se añade ModuleWithProviders<RouterModule> para que funcione
 import { Routes, RouterModule } from '@angular/router';
+import { AppComponent } from './app.component'; 
 
+import { LoginComponent } from './components/login/login.component';
+import { RegisterComponent } from './components/register/register.component';
 import { MainComponent } from './components/main/main.component';
 import { ProjectsComponent } from './components/projects/projects.component';
 import { CreateComponent } from './components/create/create.component';
@@ -12,6 +15,8 @@ import { EditComponent } from './components/edit/edit.component';
 const appRoutes: Routes = [
 
   {path: '', component: MainComponent},
+  {path: 'login', component: LoginComponent, pathMatch: "full"},
+  {path: 'register', component: RegisterComponent, pathMatch: "full"},
   {path: 'main', component: MainComponent},
   {path: 'proyectos', component: ProjectsComponent},
   {path: 'crear-proyecto', component: CreateComponent},
