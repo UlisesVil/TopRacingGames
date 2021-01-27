@@ -1,49 +1,54 @@
+<div class="register" *ngIf="register">
+
+
+    <div class="message success" *ngIf="status=='success'">
+        El Registro se ha creado Correctamente.
+    </div>
+    
+    <div class="message failed" *ngIf="status=='failed'">
+        El Registro NO SE HA PODIDO CREAR
+    </div>
 
 
 
-<div class="register">
-
-    <form class="custom-form" action="" method="POST" #registerForm="ngForm">
+    <form class="custom-form" #registerForm="ngForm" (ngSubmit)="onSubmit(registerForm)">
 
         <h1>Registro</h1>
 
-        <input 
-            type="text"
-            [(ngModel)]="name"
-            name="name"
-            placeholder="Nombre"
-            required
-        />
-        <input 
-            type="text"
-            [(ngModel)]="lastName"
-            name="lastname"
-            placeholder="Apellido"
-            required
-        />
-        <input 
-            type="email"
-            [(ngModel)]="email"
-            name="email"
-            placeholder="Email"
-            required
-        />
-        <input 
-            type="password"
-            [(ngModel)]="password"
-            name="password"
-            placeholder="password"
-            required
-        />
-        <input 
-            type="password"
-            [(ngModel)]="confirmPassword"
-            name="password"
-            placeholder="Confirmar Password"
-            required
-        />
+        <label for="name">Nombre</label>
+        <input type="text" name="name" #name="ngModel" [(ngModel)]="register.name" placeholder="Nombre" required/>
+        <span class="form_error" *ngIf="name.touched && !name.valid">
+            <strong>*El Nombre es Obligatorio</strong>
+        </span>
 
-        <button type="submit" (click)="register()">Registro</button>
+        <label for="lastName">LastName</label>
+        <input type="text" name="lastName" #lastName="ngModel" [(ngModel)]="register.lastName" placeholder="Apellido" required/>
+        <span class="form_error" *ngIf="lastName.touched && !lastName.valid">
+            <strong>*El Nombre es Obligatorio</strong>
+        </span>
+
+        <label for="email">Email</label>
+        <input type="email" name="email" #email="ngModel" [(ngModel)]="register.email" placeholder="Email" required/>
+        <span class="form_error" *ngIf="email.touched && !email.valid">
+            <strong>*El Nombre es Obligatorio</strong>
+        </span>
+          
+        
+        <input type="hidden" name="role" #name="ngModel" [(ngModel)]="register.role" placeholder="role"/>
+        
+        <label for="password">Password</label>
+        <input type="password" name="password" #password="ngModel" [(ngModel)]="register.password" placeholder="Password" required/>
+        <span class="form_error" *ngIf="password.touched && !password.valid">
+            <strong>*El Nombre es Obligatorio</strong>
+        </span>
+
+        <label for="confirmPassword">Confirmar Password</label>
+        <input type="password" name="confirmPassword" #confirmPassword="ngModel" [(ngModel)]="register.confirmPassword" placeholder="confirmPassword" required/>
+        <span class="form_error" *ngIf="confirmPassword.touched && !confirmPassword.valid">
+            <strong>*El Nombre es Obligatorio</strong>
+        </span>
+
+        <input type="submit" value="Enviar" [disabled]="!registerForm.form.valid"/>
 
 
     </form>
