@@ -60,6 +60,8 @@ Este nuevo css debe cargarse en angular.json en styles "src/assets/styles.css"
 *{
     margin: 0px;
     padding: 0px;
+    color:white;
+    font-family: FrederickatheGreat;
 }
 
 body{
@@ -161,7 +163,7 @@ footer{
     width: 75%;
     margin: 0px auto;
     padding-top: 15px;
-    color: rgba(0, 0, 0, 0.5);
+    color: rgb(250, 245, 245);
 }
 
 
