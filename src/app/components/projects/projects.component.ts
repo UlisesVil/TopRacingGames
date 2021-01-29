@@ -13,6 +13,7 @@ export class ProjectsComponent implements OnInit {
 
   public projects: Project[];
   public url: string;
+  public status: string;
 
   constructor(
     private _projectService: ProjectService
@@ -30,6 +31,7 @@ export class ProjectsComponent implements OnInit {
       response => {
         if(response.projects){
           this.projects = response.projects;
+          this.status= 'failed';
         }
         
       },

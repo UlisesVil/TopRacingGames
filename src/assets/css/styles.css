@@ -61,11 +61,11 @@ Este nuevo css debe cargarse en angular.json en styles "src/assets/styles.css"
     margin: 0px;
     padding: 0px;
     color:white;
-    font-family: FrederickatheGreat;
+    
 }
 
 body{
-   font-family: "yanone", Arial, Helvetica;
+   font-family: FrederickatheGreat;
    font-size: 20px;
    background: black;
    background-attachment: fixed; /* esto hace que el body se quede fijo y al hacer scroll el fondo no se mueva*/
@@ -81,23 +81,25 @@ body{
 
 header{
     position: fixed;
+    display: block;
     width: 100%;
     height: fit-content;
     display: block;
     background: rgba(0, 0, 0, 0.8);
-   position: fixed;
-   text-transform: uppercase;
-   z-index: 4;
-   /*border: 1px solid red;*/
+    position: fixed;
+    text-transform: uppercase;
+    margin: 0px auto;
+    z-index: 4;
+    white-space: nowrap;
 }
 
 header ul{
     display: block;
-    width: 50%;
+    width: fit-content;
     height: fit-content;
     margin: 0px auto;
     margin-top: -3px;
-
+    /*border: 1px solid red;*/
 }
 
 header ul li{
@@ -105,7 +107,6 @@ header ul li{
     margin: 0px auto;
     text-align: center;
     line-height: 50px;
-
 }
 
 header a{

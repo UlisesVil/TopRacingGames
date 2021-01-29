@@ -21,16 +21,16 @@
             <strong>*El Nombre es Obligatorio</strong>
         </span>
 
-        <label for="lastName">LastName</label>
+        <label for="lastName">Apellido</label>
         <input type="text" name="lastName" #lastName="ngModel" [(ngModel)]="register.lastName" placeholder="Apellido" required/>
         <span class="form_error" *ngIf="lastName.touched && !lastName.valid">
-            <strong>*El Nombre es Obligatorio</strong>
+            <strong>*El Apellido es Obligatorio</strong>
         </span>
 
-        <label for="email">Email</label>
+        <label for="email">E-mail</label>
         <input type="email" name="email" #email="ngModel" [(ngModel)]="register.email" placeholder="Email" required/>
         <span class="form_error" *ngIf="email.touched && !email.valid">
-            <strong>*El Nombre es Obligatorio</strong>
+            <strong>*El E-mail es Obligatorio</strong>
         </span>
           
         
@@ -39,16 +39,20 @@
         <label for="password">Password</label>
         <input type="password" name="password" #password="ngModel" [(ngModel)]="register.password" placeholder="Password" required/>
         <span class="form_error" *ngIf="password.touched && !password.valid">
-            <strong>*El Nombre es Obligatorio</strong>
+            <strong>*El Password es Obligatorio</strong>
         </span>
 
         <label for="confirmPassword">Confirmar Password</label>
         <input type="password" name="confirmPassword" #confirmPassword="ngModel" [(ngModel)]="register.confirmPassword" placeholder="confirmPassword" required/>
         <span class="form_error" *ngIf="confirmPassword.touched && !confirmPassword.valid">
-            <strong>*El Nombre es Obligatorio</strong>
+            <strong>*Debes Confirmar tu Password</strong>
         </span>
 
-        <input type="submit" value="Enviar" [disabled]="!registerForm.form.valid"/>
+        <span class="form_error" *ngIf="password.value !== confirmPassword.value">
+            <strong>*La contraseña no es igual a la confirmada</strong>
+        </span>
+
+        <input type="submit" value="Enviar" [disabled]="!registerForm.form.valid || password.value !== confirmPassword.value"/>
 
 
     </form>

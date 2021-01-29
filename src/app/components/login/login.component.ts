@@ -1,27 +1,53 @@
 import { Component, OnInit } from '@angular/core';
-import { UsersService } from '../../services/users.service';
+import { Register } from '../../models/register';
+import { LoginService } from '../../services/login.service';
+import { Global } from '../../services/global';
+import { ActivatedRoute, Router } from '@angular/router';
 
 @Component({
   selector: 'app-login',
   templateUrl: './login.component.html',
-  styleUrls: ['./login.component.css']
+  styleUrls: ['./login.component.css'],
+  providers:[LoginService]
 })
 export class LoginComponent implements OnInit {
-  email: string;
-  password: string;
+  public email: string;
+  public register: Register;
+  public get_login;
+  public status: string;
 
   constructor(
-    public userService: UsersService
-  ){}
+    private _loginService: LoginService,
+    private _router: Router
+  ){
+    this.register = new Register('','','','','','','');
+  }
 
   ngOnInit(): void {
   }
 
-  login(){
-      const user={email: this.email, password: this.password};
-      this.userService.login(user).subscribe( data => {
-        console.log(data);
-      });
+
+  onSubmit(form){
+      console.log(this.register.email);
+      this.email= this.register.email;
+
+      this._loginService.getLogin(this.email).subscribe(
+        response=>{
+          console.log(response);
+          if(response.register){
+            this.register=response.register;
+            this.status = 'success';
+            this._router.navigate(['/proyectos']);
+            form.reset();
+          }else{
+            this.status= 'failed';
+          }
+          
+        },
+        error=>{
+          console.log(<any>error);
+        }
+      );
     
   }
 

@@ -1,16 +1,41 @@
 <div id="login">
-    <form class="custom-form" method="POST" #loginForm="ngForm">
+
+    <div class="message success" *ngIf="status=='success'">
+        Te has Logueado correctamente "Bienvenido"
+        <p>{{register.name}}</p>
+    </div>
+    
+    <div class="message failed" *ngIf="status=='failed'">
+        Fallo intentando loguearte
+    </div>
+
+    <form class="custom-form" #loginForm="ngForm" (ngSubmit)="onSubmit(loginForm)">
 
         <h1>Login</h1>
-        <label for="email">Email</label>
-        <input type="email" name="email" #name="ngModel" [(ngModel)]="email" placeholder="Email" required/>
 
+        <label for="email">E-mail</label>
+        <input type="email" name="email" #email="ngModel" [(ngModel)]="register.email" placeholder="Email" required/>
+        <span class="form_error" *ngIf="email.touched && !email.valid">
+            <strong>*El E-mail es Obligatorio</strong>
+        </span>
+          
+        
+        <input type="hidden" name="role" #name="ngModel" [(ngModel)]="register.role" placeholder="role"/>
         
         <label for="password">Password</label>
-        <input type="password" name="password" #name="ngModel" [(ngModel)]="password" placeholder="Password" required/>
+        <input type="password" name="password" #password="ngModel" [(ngModel)]="register.password" placeholder="Password" required/>
+        <span class="form_error" *ngIf="password.touched && !password.valid">
+            <strong>*El Password es Obligatorio</strong>
+        </span>
+
+        <label for="confirmPassword">Confirmar Password</label>
+        <input type="password" name="confirmPassword" #confirmPassword="ngModel" [(ngModel)]="register.confirmPassword" placeholder="confirmPassword" required/>
+        <span class="form_error" *ngIf="confirmPassword.touched && !confirmPassword.valid">
+            <strong>*Debes Confirmar tu Password</strong>
+        </span>
 
 
-        <button type="submit" (click)="login()">Log in</button>
+        <input type="submit" value="Log In" [disabled]="!loginForm.form.valid || password.value !== confirmPassword.value"/>
     </form>
 
 

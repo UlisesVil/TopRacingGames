@@ -30,7 +30,7 @@ export class RegisterComponent implements OnInit {
     this._registerService.saveRegister(this.register).subscribe(
       response=>{
         console.log(response);
-        if(response.register){
+        if(!response.register){
           this.save_register= response.register;
           this.status = 'success';
           form.reset();
@@ -43,5 +43,4 @@ export class RegisterComponent implements OnInit {
       }
     );
   }
-
 }
