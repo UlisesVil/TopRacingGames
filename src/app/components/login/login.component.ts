@@ -31,7 +31,7 @@ export class LoginComponent implements OnInit {
       console.log(this.register.email);
       this.email= this.register.email;
 
-      this._loginService.getLogin(this.email).subscribe(
+      this._loginService.getLogin(this.register).subscribe(
         response=>{
           console.log(response);
           if(response.register){

@@ -13,9 +13,15 @@ export class LoginService{
     ){
         this.url = Global.url;
     }
-
+/*
     getLogin(email): Observable<any>{
         let headers = new HttpHeaders().set('Content-Type', 'application/json');
-        return this._http.get(this.url+'login/'+email, {headers: headers});
+        return this._http.post(this.url+'login/'+email, {headers: headers});
+    } 
+    */
+    getLogin(login: Register): Observable<any>{
+        let params = JSON.stringify(login);
+        let headers = new HttpHeaders().set('Content-Type', 'application/json');
+        return this._http.post(this.url+'login', params, {headers: headers});
     } 
 }
