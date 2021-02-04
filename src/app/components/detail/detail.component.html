@@ -1,26 +1,34 @@
 <div class="container" *ngIf="project">
-    
     <div class="detailcont">
-        <div class="image" *ngIf="project.image">
-            <img src="{{url+'get-image/'+project.image}}"/>
-        </div>
-
-        <div class="data">
+        <div class="gamescont">
             <h1>{{project.name}}</h1>
-            <h3>{{project.description}}</h3>
-            <p>{{project.category}}</p>
-            <p>{{project.langs}}</p>
-            <p *ngIf="confirm==false" >
-                <a [routerLink]="['/editar-proyecto', project._id]" class="button-edit">Editar</a>
-                <a (click)="setConfirm(true)" class="button-delete">Borrar</a>
-            </p>
-            <p *ngIf="confirm==true" >
-                <span class="confirm">
-                    ¿Estas seguro de ELIMINAR este proyecto?<br/>
-                </span>
-                <a (click)="setConfirm(false)" class="button-edit">Cancelar</a>
-                <a (click)="deleteProject(project._id)" class="button-delete">Eliminar definitivamente</a>
-            </p>
+            <div class="imagedetail" *ngIf="project.image">
+                <img src="{{url+'get-image/'+project.image}}"/>
+            </div>
+
+            <div class="data">
+            
+
+                <p>Vehiculos que utiliza: {{project.category}}</p>
+                <p>Disponible en: {{project.langs}}</p>
+                <br>
+                <p class="description">{{project.description}}</p>
+                
+
+                <div *ngIf="TOKEN_STRING && role=='admin'">
+                    <p *ngIf="confirm==false" >
+                        <a [routerLink]="['/editar-proyecto', project._id]" class="button-edit">Editar</a>
+                        <a (click)="setConfirm(true)" class="button-delete">Borrar</a>
+                    </p>
+                    <p *ngIf="confirm==true" >
+                        <span class="confirm">
+                            ¿Estas seguro de ELIMINAR este proyecto?<br/>
+                        </span>
+                        <a (click)="setConfirm(false)" class="button-edit">Cancelar</a>
+                        <a (click)="deleteProject(project._id)" class="button-delete">Eliminar definitivamente</a>
+                    </p>
+                </div>
+            </div>
         </div>
-    </div>
+        </div>
 </div>

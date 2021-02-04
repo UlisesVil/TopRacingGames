@@ -19,7 +19,7 @@ export class RegisterComponent implements OnInit {
   constructor(
     private _registerService: RegisterService,
   ) { 
-    this.register = new Register('','','','','user','','');
+    this.register = new Register('','','','','regular','','');
   }
 
   ngOnInit(): void {

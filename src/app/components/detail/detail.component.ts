@@ -15,6 +15,8 @@ export class DetailComponent implements OnInit {
   public url: string;
   public project: Project;
   public confirm: boolean;
+  public TOKEN_STRING: string;
+  public role: string;
 
   constructor(
     private _projectService: ProjectService,
@@ -28,9 +30,16 @@ export class DetailComponent implements OnInit {
   ngOnInit() {
     this._route.params.subscribe(params=>{
       let id = params.id;
-
       this.getProject(id);
     });
+
+    let payload= JSON.parse(localStorage.getItem("payload"));
+    if(payload){
+      this.role=payload["role"];
+      console.log(payload);
+      console.log(this.role);
+      this.TOKEN_STRING = localStorage.getItem("token");
+    }
   }
 
   getProject(id){

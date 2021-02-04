@@ -2,49 +2,58 @@
     color: white;
 }
 
-h1 {
-    margin: 0;
-    padding: 0;
-  }
+
   .custom-form {
     min-width: 300px;
-    max-width: 60%;
+    width: 100%;
     margin: 0px auto;
-    background: rgba(255, 255, 255, 0.15);
     padding: 2rem 3rem;
-    margin: auto;
     border-radius: 2.5rem;
-    background-color: #070808;
-    box-shadow: 13px 13px 20px #042b72, -13px -13px 20px #042b72;
+    box-shadow: 13px 13px 20px #fc0000, -13px -13px 20px #042b72;
     color: white;
+    text-shadow: 5px 5px 5px black;
     margin-top: 10rem;
+    background-image: url(../../../assets/img/flag.jpg);
+    background-size: cover;
   }
-  .custom-form input {
+  .inputForm{
     display: block;
     margin: 2rem 0;
-    width: 100%;
+    width: 95%;
     border-radius: 0.5rem;
-    padding: 1rem;
+    padding: 1rem 0 1rem 1rem;
     border: none;
-    box-shadow: inset -5px -5px 15px rgba(255, 255, 255, 0.8), inset 5px 5px 10px
-        rgba(0, 0, 0, 0.1);
-    border: 0 none;
     background: #ebf5fc;
     color: black;
   }
-  .custom-form button {
+
+ 
+  .sendButton{
+    position: relative;
+    display: block;
     text-transform: uppercase;
     letter-spacing: 0.15em;
-    border: none;
+    border: 1px solid red;
+    border-left: 8px solid red;
+    border-bottom-left-radius: 10px;
+    border-top-right-radius: 10px;
     font-size: 0.875rem;
-    color: #ffffff;
+    color: #bb0404;
     font-weight: bold;
-    background-color: #042b72;
-    width: 150px;
-    display: block;
-    padding: 0.875rem 1rem;
-    border-radius: 1.5rem;
-    box-shadow: 3px 3px 8px #042b72, -3px -3px 8px #042b72;
+    background-color: #00000093;
+    width: fit-content;
+    padding: 0.575rem 1rem;
     cursor: pointer;
     margin: 0px auto;
+    outline: none;
+  }
+
+  .sendButton:hover{
+    top: -3px;
+    box-shadow: 0px 0px 20px red;
+  }
+
+  .sendButton:active{
+    top: 2px;
+    box-shadow: 0px 0px 20px rgb(11, 2, 143);
   }

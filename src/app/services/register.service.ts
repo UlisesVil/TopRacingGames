@@ -7,11 +7,14 @@ import { Global } from './global';
 @Injectable()
 export class RegisterService{
     public url: string;
+    
 
     constructor(
         private _http: HttpClient
+        
     ){
         this.url = Global.url;
+        
     }
 
     saveRegister( register: Register): Observable<any>{

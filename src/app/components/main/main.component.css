@@ -1,21 +1,39 @@
 #videoMain{
     width: 98%;
-    min-height: 20000px;
+    min-height: 15000px;
     /*border: 1px solid rgb(0, 26, 255);*/
 }
 
+
+
 #title{
+    width: 100%;
     position: absolute;
-    font-size: 70px;
-    margin: 20% auto;
+    text-align: center;
+    background-color: rgba(0, 0, 0, .5);
+    font-size: 40px;
+    top: 50px;
     left: 0;
     right: 0;
-    color: rgb(255, 0, 0);
+    
     font-family: FrederickatheGreat;
     /*font-family: Frijole;*/
     /*font-family: TitanOne;*/
-    text-shadow: 5px 5px 5px  rgb(0, 0, 0);
+    
     z-index: 3;
+}
+
+#title p{
+    color: rgb(255, 255, 255);
+    text-shadow: 5px 5px 5px  rgb(0, 0, 0);
+}
+
+.text1{
+    margin: 10% auto 0px;
+   
+}
+.text2{
+    margin: 0px auto 0px;
 }
 
 
@@ -47,11 +65,15 @@
 #elements{
     width: 30%;
     height: fit-content;
-    margin: 35% auto ;
+    margin: 5% auto ;
     left: 0;
     right: 0;
     z-index: 2;
     /*border: 1px solid rgb(208, 255, 0);*/
+}
+
+.scrollme{
+    font-size: 20px;
 }
 
 #positiondiv p{
@@ -69,4 +91,38 @@
 
 .message{
     z-index: 4;
+}
+
+
+@media screen and (max-width: 700px){
+
+    #title p{
+        font-size: 20px;
+    }
+
+    .scrollme{
+        font-size: 20px;
+    }
+
+    
+
+
+}
+
+@media screen and (max-width: 414){
+
+    #title p{
+        font-size: 10px;
+    }
+
+    .scrollme{
+        font-size: 10px;
+    }
+
+    .text1{
+        margin: 0% auto 0px;
+       
+    }
+
+
 }

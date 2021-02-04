@@ -15,45 +15,45 @@
 
         <h1>Registro</h1>
 
-        <label for="name">Nombre</label>
-        <input type="text" name="name" #name="ngModel" [(ngModel)]="register.name" placeholder="Nombre" required/>
+        <!--<label for="name">Nombre</label>-->
+        <input class="inputForm" type="text" name="name" #name="ngModel" [(ngModel)]="register.name" placeholder="Nombre" required/>
         <span class="form_error" *ngIf="name.touched && !name.valid">
-            <strong>*El Nombre es Obligatorio</strong>
+            *El Nombre es Obligatorio
         </span>
 
-        <label for="lastName">Apellido</label>
-        <input type="text" name="lastName" #lastName="ngModel" [(ngModel)]="register.lastName" placeholder="Apellido" required/>
+        <!--<label for="lastName">Apellido</label>-->
+        <input class="inputForm" type="text" name="lastName" #lastName="ngModel" [(ngModel)]="register.lastName" placeholder="Apellido" required/>
         <span class="form_error" *ngIf="lastName.touched && !lastName.valid">
-            <strong>*El Apellido es Obligatorio</strong>
+            *El Apellido es Obligatorio
         </span>
 
-        <label for="email">E-mail</label>
-        <input type="email" name="email" #email="ngModel" [(ngModel)]="register.email" placeholder="Email" required/>
+        <!--<label for="email">E-mail</label>-->
+        <input class="inputForm" type="email" name="email" #email="ngModel" [(ngModel)]="register.email" placeholder="Email" required/>
         <span class="form_error" *ngIf="email.touched && !email.valid">
-            <strong>*El E-mail es Obligatorio</strong>
+            *El E-mail es Obligatorio
         </span>
           
         
-        <input type="hidden" name="role" #name="ngModel" [(ngModel)]="register.role" placeholder="role"/>
+        <input class="inputForm" type="hidden" name="role" #name="ngModel" [(ngModel)]="register.role" placeholder="role"/>
         
-        <label for="password">Password</label>
-        <input type="password" name="password" #password="ngModel" [(ngModel)]="register.password" placeholder="Password" required/>
+        <!--<label for="password">Password</label>-->
+        <input class="inputForm" type="password" name="password" #password="ngModel" [(ngModel)]="register.password" placeholder="Password" required/>
         <span class="form_error" *ngIf="password.touched && !password.valid">
-            <strong>*El Password es Obligatorio</strong>
+            *El Password es Obligatorio
         </span>
 
-        <label for="confirmPassword">Confirmar Password</label>
-        <input type="password" name="confirmPassword" #confirmPassword="ngModel" [(ngModel)]="register.confirmPassword" placeholder="confirmPassword" required/>
+        <!--<label for="confirmPassword">Confirmar Password</label>-->
+        <input class="inputForm" type="password" name="confirmPassword" #confirmPassword="ngModel" [(ngModel)]="register.confirmPassword" placeholder="Confirmar Password" required/>
         <span class="form_error" *ngIf="confirmPassword.touched && !confirmPassword.valid">
-            <strong>*Debes Confirmar tu Password</strong>
+            *Debes Confirmar tu Password
         </span>
 
         <span class="form_error" *ngIf="password.value !== confirmPassword.value">
-            <strong>*La contraseña no es igual a la confirmada</strong>
+            *La contraseña no es igual a la confirmada
         </span>
 
-        <input type="submit" value="Enviar" [disabled]="!registerForm.form.valid || password.value !== confirmPassword.value"/>
-
+        <input class="sendButton" type="submit" value="New Racer!!!" [disabled]="!registerForm.form.valid || password.value !== confirmPassword.value"/>
+<!---->
 
     </form>
 

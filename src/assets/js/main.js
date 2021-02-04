@@ -1,8 +1,13 @@
 "use strict"
 
+
+
 $(window).scroll(function(){
     let scrollTop = document.documentElement.scrollTop;
-    videoIntro.currentTime = scrollTop/500;
-
-    //console.log({scrollTop});
+    let videoIntro = document.querySelector("#videoIntro"); 
+    
+    if(videoIntro){
+        videoIntro.currentTime = scrollTop/500;
+    }
 });
+

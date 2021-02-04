@@ -19,6 +19,8 @@ export class EditComponent implements OnInit {
   public status: string;
   public filesToUpload: Array<File>;
   public url: string;
+  public TOKEN_STRING: string;
+  public role: string;
 
 
   constructor(
@@ -37,6 +39,14 @@ export class EditComponent implements OnInit {
 
       this.getProject(id);
     });
+
+    let payload= JSON.parse(localStorage.getItem("payload"));
+    if(payload){
+      this.role=payload["role"];
+      console.log(payload);
+      console.log(this.role);
+      this.TOKEN_STRING = localStorage.getItem("token");
+    }
   }
 
   getProject(id){

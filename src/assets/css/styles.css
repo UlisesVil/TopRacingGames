@@ -68,7 +68,7 @@ body{
    font-family: FrederickatheGreat;
    font-size: 20px;
    background: black;
-   background-attachment: fixed; /* esto hace que el body se quede fijo y al hacer scroll el fondo no se mueva*/
+   /*background-attachment: fixed; *//* esto hace que el body se quede fijo y al hacer scroll el fondo no se mueva*/
 }
 
 .clearfix{
@@ -151,11 +151,15 @@ header a:hover,
     width: 100%;
     min-height: 78vh;
     height: auto;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
     margin: 0px auto;
     box-shadow: 0px 0px 40px black;
     background: transparent;
     padding-top: 52px;
     color: white;
+    
 }
 
 /*Pie de pagina*/
@@ -168,30 +172,7 @@ footer{
 }
 
 
-/*Sobre mi*/
-#title{
-    width: 70%;
-    margin: 0px auto;
-    text-align: center;
-    margin-bottom: 70px;
-    margin-top: 20px;
-    /*border: 1px solid red;*/
 
-}
-
-#title h1{
-    font-family: "finger";
-    font-size: 60px;
-    border-bottom: 1px solid #ccc;
-    padding-bottom: 5px;
-}
-
-#title h2{
-    font-size: 25px;
-    color: gray;
-    margin-top: 5px;
-    margin-bottom: 5px;
-}
 
 .about{
     width: 70%;
@@ -212,39 +193,6 @@ footer{
 }
 
 /*Seccion con formulario*/
-
-.container{
-    padding: 50px;
-    padding-top: 10px;
-    /*border: 1px solid red;*/
-  
-}
-
-.container .image{
-    float: left;
-    width: 47%;
-   
-}
-
-
-.container .image img{
-    float: left;
-    width: 100%;
-    
-}
-
-.container .data{
-    float: left;
-    width: 47%;
-    margin-left: 30px;
-}
-
-.container h2{
-    display: block;
-    border-bottom: 1px solid #ccc;
-    padding-bottom: 10px;
-    margin-bottom: 15px;
-}
 
 form{
     width: 80%;
@@ -270,21 +218,6 @@ form textarea{
 
 
 
-form button,
-form input[type="submit"],
-.button-edit,
-.button-delete{
-    display: block;
-    font-size: 17px;
-    padding: 7px;
-    margin-top:15px;
-    color: white;
-    background: rgba(53, 103, 164, 1);
-    border: 1px solid rgba(13, 67, 133, 1);
-    cursor: pointer;
-    border-radius: 5px;
-
-}
 
 .button-edit,
 .button-delete{
@@ -306,17 +239,8 @@ form input[type="submit"],
 }
 
 
-form button:hover,
-form input[type="submit"]:hover{
-   
-    background: rgba(53, 103, 164, 0.8);
-    border: 1px solid rgba(13, 67, 133, 1);
-   
-}
 
-form input[type="submit"]:active{
-    box-shadow: 3px 3px 10px black;
-}
+
 
 form input[disabled]{
    opacity: 0.3;
@@ -324,10 +248,13 @@ form input[disabled]{
 }
 
 .form_error{
-    font-size: 15px;
+    font-size: 20px;
     padding: 3px;
     color: red;
     margin-left: 5px;
+    text-shadow: 5px 5px 5px black;
+    background-color: rgba(0, 0, 0, 0.7);
+    border-radius: 5px;
 }
 
 .message{
@@ -351,42 +278,8 @@ form input[disabled]{
     color: white;
 }
 
-/*Pagina de Proyectos*/
-.project{
-    list-style: none;
-    display: block;
-    float: left;
-    width: 28%;
-    text-align: center;
-    margin-left: 20px;
-    margin-right: 20px;
-    margin-bottom: 30px;
-}
-
-.project .image{
-    width: 100%;
-    height: 150px;
-    overflow: hidden;
-}
-
-.project img{
-    display: block;
-    width: 100%;
-
-}
-
-.project a{
-    text-decoration: none;
-    color: black;
-}
 
 
-.detailcont{
-    width: 100%;
-    display: flow-root;
-    /*border: 1px solid red;*/
-    
-}
 
 .confirm{
     display: block;

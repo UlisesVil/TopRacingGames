@@ -17,7 +17,8 @@ export class CreateComponent implements OnInit {
   public save_project;
   public status: string;
   public filesToUpload: Array<File>;
-
+  public TOKEN_STRING: string;
+  public role: string;
 
   constructor(
     private _projectService: ProjectService,
@@ -29,10 +30,18 @@ export class CreateComponent implements OnInit {
    }
 
   ngOnInit(): void {
+    let payload= JSON.parse(localStorage.getItem("payload"));
+    if(payload){
+      this.role=payload["role"];
+      console.log(payload);
+      console.log(this.role);
+      this.TOKEN_STRING = localStorage.getItem("token");
+    }
   }
 
   onSubmit(form){
-    
+   
+
     //Guardar los datos basicos
     this._projectService.saveProject(this.project).subscribe(
       response=>{
