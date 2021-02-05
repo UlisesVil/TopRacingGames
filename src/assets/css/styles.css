@@ -118,6 +118,7 @@ header a{
     color: white;
     transition: all 800ms;
     font-size: 15px;
+    cursor: pointer;
 }
 
 header a:hover,
@@ -151,9 +152,6 @@ header a:hover,
     width: 100%;
     min-height: 78vh;
     height: auto;
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
     margin: 0px auto;
     box-shadow: 0px 0px 40px black;
     background: transparent;
@@ -194,19 +192,6 @@ footer{
 
 /*Seccion con formulario*/
 
-form{
-    width: 80%;
-    /*border: 1px solid red;*/
-}
-
-form label{
-    display: block;
-    width: 100%;
-    margin-top: 10px;
-    margin-bottom: 5px;
-    /*border: 1px solid red;*/
-}
-
 form input[type="text"],
 form input[type="number"],
 form input[type="email"],
@@ -215,31 +200,6 @@ form textarea{
     padding: 5px;
     /*border: 1px solid red;*/
 }
-
-
-
-
-.button-edit,
-.button-delete{
-    width: 30%;
-    text-align: center;
-    float: left;
-    margin-right: 10px;
-    text-decoration: none;
-}
-
-.button-edit{
-    background: orange;
-    border: none;
-}
-
-.button-delete{
-    background: red;
-    border: none;
-}
-
-
-
 
 
 form input[disabled]{
@@ -283,11 +243,29 @@ form input[disabled]{
 
 .confirm{
     display: block;
-    font-weight: bold;
     margin-top: 20px;
     margin-left: 25px;
+    margin-bottom: 5px;
     color: red;
 }
 
 
+/*Slider*/
+.bx-wrapper, .bx-viewport{
+   
+    background-color: black !important;
+    border:2px solid black !important;  
+    box-shadow: none !important;
+}
 
+
+
+/*
+@media screen and (max-width: 520px){
+
+    .bx-pager{
+        bottom: -80px !important;
+    }
+
+
+}*/

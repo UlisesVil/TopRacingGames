@@ -1,6 +1,6 @@
 #videoMain{
     width: 98%;
-    min-height: 15000px;
+    min-height: 8000px;
     /*border: 1px solid rgb(0, 26, 255);*/
 }
 
@@ -94,8 +94,9 @@
 }
 
 
-@media screen and (max-width: 700px){
+@media screen and (max-width: 720px){
 
+  
     #title p{
         font-size: 20px;
     }
@@ -109,7 +110,7 @@
 
 }
 
-@media screen and (max-width: 414){
+@media screen and (max-width: 414px){
 
     #title p{
         font-size: 10px;
@@ -120,7 +121,7 @@
     }
 
     .text1{
-        margin: 0% auto 0px;
+        margin: 5% auto 0px;
        
     }
 

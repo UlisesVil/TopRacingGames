@@ -9,7 +9,7 @@
             <div class="data">
             
 
-                <p>Vehiculos que utiliza: {{project.category}}</p>
+                <p>Tipo de Vehiculos: {{project.category}}</p>
                 <p>Disponible en: {{project.langs}}</p>
                 <br>
                 <p class="description">{{project.description}}</p>
@@ -17,15 +17,19 @@
 
                 <div *ngIf="TOKEN_STRING && role=='admin'">
                     <p *ngIf="confirm==false" >
-                        <a [routerLink]="['/editar-proyecto', project._id]" class="button-edit">Editar</a>
-                        <a (click)="setConfirm(true)" class="button-delete">Borrar</a>
+                        <span class="editbuttons">
+                            <a [routerLink]="['/editar-proyecto', project._id]" class="button-edit">Editar</a>
+                            <a (click)="setConfirm(true)" class="button-delete">Borrar</a>
+                        </span>
                     </p>
                     <p *ngIf="confirm==true" >
                         <span class="confirm">
-                            ¿Estas seguro de ELIMINAR este proyecto?<br/>
+                            ¿Estas seguro de ELIMINAR este Articulo?<br/>
                         </span>
-                        <a (click)="setConfirm(false)" class="button-edit">Cancelar</a>
-                        <a (click)="deleteProject(project._id)" class="button-delete">Eliminar definitivamente</a>
+                        <span class="editbuttons">
+                            <a (click)="setConfirm(false)" class="button-edit">Cancelar</a>
+                            <a (click)="deleteProject(project._id)" class="button-delete">Eliminar definitivamente</a>
+                        </span>
                     </p>
                 </div>
             </div>

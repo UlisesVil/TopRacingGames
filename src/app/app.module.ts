@@ -18,6 +18,7 @@ import { DetailComponent } from './components/detail/detail.component';
 import { EditComponent } from './components/edit/edit.component';
 import { SliderComponent } from './components/slider/slider.component';
 import { ResaltadoDirective } from './resaltado.directive';
+import { GalleryComponent } from './components/gallery/gallery.component';
 
 
 //import * as $ from 'jquery';
@@ -37,7 +38,8 @@ import { ResaltadoDirective } from './resaltado.directive';
     SliderComponent,
     ResaltadoDirective,
     LoginComponent,
-    RegisterComponent
+    RegisterComponent,
+    GalleryComponent    
   ],
   imports: [
     BrowserModule,

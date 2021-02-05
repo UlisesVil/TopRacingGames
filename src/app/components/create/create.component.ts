@@ -25,7 +25,7 @@ export class CreateComponent implements OnInit {
     private _uploadService: UploadService
   ) {
     this.title = "Crear Proyecto";
-    this.project = new Project('','','','',2020,'','');
+    this.project = new Project('','','','',null,'','');
 
    }
 

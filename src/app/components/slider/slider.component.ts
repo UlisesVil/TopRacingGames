@@ -37,7 +37,9 @@ export class SliderComponent implements OnInit {
                 
     });
 
-    $('.galeria').bxSlider({
+   
+
+    $('.bxslider').bxSlider({
       auto: true,
       autoControls: true,
       stopAutoOnClick: true,
@@ -47,11 +49,13 @@ export class SliderComponent implements OnInit {
       responsive:true,
       touchEnabled:true,
       preventDefaultSwipeX:true,
-      maxSlides:2,
-      slideWidth: this.anchura, //viene de contact.component.ts "padre"
-      captions: this.captions // viene de contact.component.ts "padre" y se le cambio el nombre en decorador @Input de etiquetas a captions 
+      maxSlides:1,
+      slideWidth: 1470,//this.anchura, //viene de Gallery.component.ts "padre"
+      captions: this.captions // viene de Gallery.component.ts "padre" y se le cambio el nombre en decorador @Input de etiquetas a captions 
+      
     });
-
+    console.log(this.anchura);
+    //console.log(this.anchura);
     //this.conseguirAutor.emit(this.autor); //al cargarlo en el onInit tendremos la informacion disponible desde el principio y le quita la funcionalidad al boton
   }
 

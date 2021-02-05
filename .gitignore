@@ -46,4 +46,4 @@ testem.log
 Thumbs.db
 
 # Heavy Files
-/src/assets/video/*
+/src/assets/video

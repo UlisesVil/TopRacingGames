@@ -5,10 +5,11 @@
     <li id="inicio"><a href="#">Main</a></li>
     <li><a [routerLink]="['/proyectos']" [routerLinkActive]="['actived']">Games</a></li>
     <li *ngIf="TOKEN_STRING && role=='admin'"><a [routerLink]="['/crear-proyecto']" [routerLinkActive]="['actived']">Add Game</a></li>
-    <li><a [routerLink]="['/contacto']" [routerLinkActive]="['actived']">Gallery</a></li>
+    <li><a [routerLink]="['/gallery']" [routerLinkActive]="['actived']">Gallery</a></li>
+    <li><a [routerLink]="['/contacto']" [routerLinkActive]="['actived']">Contact</a></li>
     <li *ngIf="!TOKEN_STRING"><a [routerLink]="['/login']" [routerLinkActive]="['actived']">Log In</a></li>
     <li *ngIf="!TOKEN_STRING"><a [routerLink]="['/register']" [routerLinkActive]="['actived']">Sign up</a></li>
-    <li id="logout" *ngIf="TOKEN_STRING"><a (click)="logout()">Log Out</a></li>
+    <li *ngIf="TOKEN_STRING"><a (click)="logout()">Log Out</a></li>
   </ul>
 </header>
 
