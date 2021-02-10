@@ -128,27 +128,12 @@ header a:hover,
 }
 
 
-/*Logotipo*/
-#logo{
-    font-family: "finger";
-    font-size: 30px;
-}
-
-#logo a{
-    transition: color 800ms,tranform 800ms;
-}
-
-#logo a:hover{
-    background: transparent;
-    color: black;
-    transform:scale(1.50,1.50);
-    
-}
 
 
 /*Contenedor Principal*/
 
 #content{
+   
     width: 100%;
     min-height: 78vh;
     height: auto;
@@ -252,20 +237,23 @@ form input[disabled]{
 
 /*Slider*/
 .bx-wrapper, .bx-viewport{
+    margin: 17px auto;
    
     background-color: black !important;
-    border:2px solid black !important;  
+    border:5px solid black !important;  
     box-shadow: none !important;
 }
 
 
 
-/*
-@media screen and (max-width: 520px){
 
-    .bx-pager{
-        bottom: -80px !important;
+@media screen and (max-width: 500px){
+
+    .bx-pager, .bx-default-pager{
+     
+        bottom: -100px !important;
     }
 
+}
 
-}*/
+

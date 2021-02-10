@@ -21,6 +21,8 @@ export class ProjectService{
     }
 
     saveProject( project: Project): Observable<any>{
+        console.log(project);
+        
         let params = JSON.stringify(project);
         let headers = new HttpHeaders().set('Content-Type', 'application/json');
 

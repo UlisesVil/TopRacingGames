@@ -1,14 +1,24 @@
+.container{
+  width: 100%;
+    margin: 0px auto;
+}
+.detailcont{
+  width: 100%;
+    margin: 0px auto;
+    border: 1px solid red;
+}
+
 #login{
   width: 100%;
   color: white;
   display: flex;
   flex-direction: column;
   align-items: center;
+  margin: 0px auto;
 }
 
 
 .custom-form {
-  min-width: 300px;
   width: 50%;
   max-width: 500px;
   margin: 0px auto;
@@ -62,3 +72,24 @@
   top: 2px;
   box-shadow: 0px 0px 20px rgb(11, 2, 143);
 }
+
+
+
+@media screen and (max-width: 370px){
+  .custom-form {
+
+    width: 100%;
+    max-width: none;
+    box-sizing: border-box;
+    padding: 1rem 2rem;
+    
+  }
+
+  #login{
+    width: 90%;
+    
+  }
+
+
+  
+  }

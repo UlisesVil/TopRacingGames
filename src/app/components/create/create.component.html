@@ -3,11 +3,11 @@
     <div class="detailcont" >
         <h2>{{title}}</h2>
 
-
+<!--
         <div class="message success" *ngIf="status=='success'">
             El proyecto se ha creado Correctamente, puedes <a [routerLink]="['/proyecto', save_project._id]">verlo aqui</a>
         </div>
-        
+    -->      
         <div class="message failed" *ngIf="status=='failed'">
             El proyecto NO SE HA PODIDO CREAR
         </div>
@@ -50,15 +50,35 @@
             </p>
             <p>
                                 
-                <span class="image detailcont" *ngIf="project.image" style="float:none;">
-                    <img src="{{url+'get-image/'+project.image}}" style="width:100px; margin-bottom: 5px;"/>
+
+                <p id="actual"></p>
+                <span class="actualimagecont" *ngIf="project.image" style="float:none;">
+                    <img class="actualimage" src="{{url+'get-image/'+project.image}}"/>
                 </span>
                 
-                <input type="file" name="image" placeholder="Subir Imagen" (change)="fileChangeEvent($event)"/>
-            </p>
+                <!--<input type="file" name="image" placeholder="Subir Imagen" (change)="fileChangeEvent($event)"/>
+            </p>-->
+
+            <p id="last"></p>  
+<div id="preview">
+   
+</div>
+
+<span class="image">
+<input type="file" name="image" id="image" class="fileup" (change)="fileChangeEvent($event)"/>
+</span>
+
+<label for="image">
+<div class="indicador"><span>Subir Imagen</span></div>
+</label> 
+
+
 
             <input class="sendButton" type="submit" value="Enviar" [disabled]="!projectForm.form.valid"/>
         </form>
     </div>
+
+
+
 
 </div>

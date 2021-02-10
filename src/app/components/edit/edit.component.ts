@@ -4,6 +4,7 @@ import { ProjectService } from '../../services/project.service';
 import { UploadService } from '../../services/upload.service';
 import { Global } from '../../services/global';
 import { Router, ActivatedRoute, Params } from '@angular/router';
+declare var $:any;
 
 @Component({
   selector: 'app-edit',
@@ -60,7 +61,7 @@ export class EditComponent implements OnInit {
     )
   }
 
-  onSubmit(){
+  onSubmit(form){
     this._projectService.updateProject(this.project).subscribe(
       response=>{
         if(response.project){
@@ -68,31 +69,54 @@ export class EditComponent implements OnInit {
             //Subir la imagen
           if(this.filesToUpload){
           this._uploadService.makeFileRequest(Global.url+"upload-image/"+response.project._id, [], this.filesToUpload, 'image')
-          .then((result:any)=>{
+            .then((result:any)=>{
               this.save_project= result.project;
               this.status = 'success';
-          });
-
+              this._router.navigate(['/proyectos']);
+              form.reset();
+            });
           }else{
             this.save_project= response.project;
             this.status = 'success';
+            this._router.navigate(['/proyectos']);
+            form.reset();
           }
-
         }else{
           this.status = 'failed';
         }
-
       },
       error=>{
         console.log(<any>error);
-        
       }
     );
   }
 
   
   fileChangeEvent(fileInput: any){
+
     this.filesToUpload= <Array<File>>fileInput.target.files;
+    
+   
+    if (this.filesToUpload && this.filesToUpload[0]) { 
+      console.log(this.filesToUpload);
+      var reader = new FileReader(); 
+      reader.readAsDataURL(this.filesToUpload[0]); 
+      console.log(reader);
+
+      reader.onload = function (e) { 
+        $('#preview + img').remove(); 
+        $('#preview').after('<img src="'+e.target.result+'" width="100%" />');
+        var URLactual = window.location.href;
+        if(URLactual.indexOf('crear')<=-1){
+          $("#actual").text('Actual Image');
+          $("#last").text('New Image');
+          $("#actual").attr('style',"padding:5px 10px");
+          $("#last").attr('style',"padding:5px 10px");
+        } 
+        
+      } 
+    } 
+
   }
 
 }

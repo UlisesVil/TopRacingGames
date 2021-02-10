@@ -37,6 +37,7 @@ export class ProjectsComponent implements OnInit {
           
           this.projects = response.projects;
           this.status= 'failed';
+          console.log(this.projects);
           
         }
         

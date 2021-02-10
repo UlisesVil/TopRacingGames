@@ -1,38 +1,42 @@
 .container{
+  width: 100%;
     margin: 0px auto;
-    display: flex;
-    justify-content: center;
+    /*border: 1px solid rgb(78, 64, 129);*/
+}
+.detailcont{
+  width: 100%;
+    margin: 0px auto;
+    /*border: 1px solid rgb(77, 129, 64);*/
 }
 
-h1{
+h1, h2{
     text-align: center;
     margin: 30px 0px;
 }
 
-.gamescont{
+.gamescont,.commentscont{
     width: 95%;
     height: fit-content;
-    margin: 0px auto;
     /*border: 1px solid red;*/
-    display: flex;
-    flex-direction: column;
+    margin: 0px auto;
 }
 
 .imagedetail{
     width: 60%;
-    min-width: 400px;
     margin: 0px auto;
-    /*border: 1px solid red;*/
+    /*border: 1px solid rgb(78, 64, 129);*/
 } 
 
 .imagedetail img{
     width: 100%;
+    /*border: 1px solid red;*/
+    margin: 0px auto;
     
 } 
+
 .data{
     width: 47%;
     margin: 35px auto;
-    min-width: 300px;
     text-align: center;
     /*border: 1px solid red;*/
 }
@@ -45,25 +49,19 @@ h1{
 .button-edit,
 .button-delete{
     
-        position: relative;
-        display: block;
-        letter-spacing: 0.15em;
-        
-        border-bottom-left-radius: 10px;
-        border-top-right-radius: 10px;
-        font-size: 0.975rem;
-        
-        background-color: #00000093;
-        width: fit-content;
-        padding: 0.575rem 1rem;
-        cursor: pointer;
-        
-        outline: none;
-        text-decoration: none;
-        margin: 0px 20px;
-      
-    
-     
+  position: relative;
+  display: block;
+  letter-spacing: 0.15em;
+  border-bottom-left-radius: 10px;
+  border-top-right-radius: 10px;
+  font-size: 0.975rem;
+  background-color: #00000093;
+  width: fit-content;
+  padding: 0.175rem 1rem;
+  cursor: pointer;
+  outline: none;
+  text-decoration: none;
+  margin: 0px 20px;
 }
 
 .button-edit{
@@ -94,10 +92,144 @@ margin-top: 10px;
 .button-edit:hover, .button-delete:hover{
     top: -3px;
     box-shadow: 0px 0px 20px red;
-  }
+}
 
-  .button-edit:active, .button-delete:active{
+.button-edit:active, .button-delete:active{
     top: 2px;
     box-shadow: 0px 0px 20px rgb(11, 2, 143);
+}
+
+
+
+
+
+
+
+.custom-form {
+  width: 50%;
+  margin: 0px auto;
+  
+  
+  color: white;
+  text-shadow: 5px 5px 5px black;
+  /*background-image: url(../../../assets/img/flag.jpg);*/
+  background-size: cover;
+  /*border: 1px solid blue;*/
+
+}
+.inputForm{
+  display: block;
+  margin: 2rem auto;
+  width: 95%;
+  border-radius: 0.5rem;
+  padding: 1rem 0 1rem 1rem;
+  border: none;
+  background: #ebf5fc;
+  color: black;
+  font-size: 20px;
+  /*border: 1px solid blue;*/
+}
+
+.titleform{
+  display: flex;
+  justify-content: center;
+  text-align: center;
+  /*border: 1px solid blue;*/
+}
+
+#sendButton{
+  position: relative;
+  display: block;
+  letter-spacing: 0.15em;
+  border: 1px solid red;
+  border-left: 8px solid red;
+  border-bottom-left-radius: 10px;
+  border-top-right-radius: 10px;
+  font-size: 0.875rem;
+  color: #bb0404;
+  font-weight: bold;
+  background-color: #00000093;
+  width: fit-content;
+  padding: 0.575rem 1rem;
+  cursor: pointer;
+  margin: 0px auto;
+  outline: none;
+}
+
+#sendButton:hover{
+  top: -3px;
+  box-shadow: 0px 0px 20px red;
+}
+
+#sendButton:active{
+  top: 2px;
+  box-shadow: 0px 0px 20px rgb(11, 2, 143);
+}
+
+
+h3{
+  font-size: 20px;
+  margin-bottom: 7px;
+  margin-top: 10px;
+}
+.date{
+  font-size: 16px;
+  color: rgb(117, 117, 117);
+  
+}
+
+.commentBox{
+  width: 50%;
+  height: fit-content;
+  margin: 20px auto;
+  /*border: 1px solid red;*/
+
+}
+
+.commentInd{
+  width: 95%;
+  margin: 0px auto;
+  padding: 10px 10px;
+  border-bottom: 1px solid red;
+  box-sizing: border-box;
+}
+
+.textcomment{
+  width: fit-content;
+  margin-bottom: 20px;
+  margin-top: 20px;
+  left: 15px;
+  text-align: justify;
+}
+
+.commentbuttons{
+  display: flex;
+  margin-top: 10px;
+  margin-bottom: 10px;
+}
+
+
+
+@media screen and (max-width: 800px){
+  .imagedetail{
+    width: 100%;
+  } 
+  
+  .commentBox{
+    width: 80%;
   }
+  .custom-form{
+    width:80%;
+    min-width: none;
+  }
+
+  .data{
+    width: 100%;
+  }
+
+}
+
+
+
+
 

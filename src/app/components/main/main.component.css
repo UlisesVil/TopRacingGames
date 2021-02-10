@@ -1,5 +1,6 @@
 #videoMain{
     width: 98%;
+    height: fit-content;
     min-height: 8000px;
     /*border: 1px solid rgb(0, 26, 255);*/
 }
@@ -10,7 +11,7 @@
     width: 100%;
     position: absolute;
     text-align: center;
-    background-color: rgba(0, 0, 0, .5);
+    background-color: rgba(39, 0, 0, 0.7);
     font-size: 40px;
     top: 50px;
     left: 0;
@@ -25,11 +26,13 @@
 
 #title p{
     color: rgb(255, 255, 255);
-    text-shadow: 5px 5px 5px  rgb(0, 0, 0);
+    /*text-shadow: 5px 5px 5px  rgb(0, 0, 0);*/
+    text-shadow: 5px 5px 10px white;
 }
 
 .text1{
-    margin: 10% auto 0px;
+    margin: 6% auto 3%;
+    font-size: 60px;
    
 }
 .text2{

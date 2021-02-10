@@ -3,6 +3,8 @@ import { Project } from '../../models/project';
 import { ProjectService } from '../../services/project.service';
 import { UploadService } from '../../services/upload.service';
 import { Global } from '../../services/global';
+import { Router, ActivatedRoute, Params } from '@angular/router';
+declare var $:any;
 
 @Component({
   selector: 'app-create',
@@ -22,7 +24,8 @@ export class CreateComponent implements OnInit {
 
   constructor(
     private _projectService: ProjectService,
-    private _uploadService: UploadService
+    private _uploadService: UploadService,
+    private _router: Router
   ) {
     this.title = "Crear Proyecto";
     this.project = new Project('','','','',null,'','');
@@ -37,10 +40,16 @@ export class CreateComponent implements OnInit {
       console.log(this.role);
       this.TOKEN_STRING = localStorage.getItem("token");
     }
+
+   
+
+
+
   }
 
   onSubmit(form){
    
+//console.log(this.project);
 
     //Guardar los datos basicos
     this._projectService.saveProject(this.project).subscribe(
@@ -55,11 +64,15 @@ export class CreateComponent implements OnInit {
             .then((result:any)=>{
                 this.save_project= result.project;
                 this.status = 'success';
+
+                this._router.navigate(['/proyectos']);
+            
                 form.reset();
             });
           }else{
             this.save_project= response.project;
             this.status = 'success';
+            this._router.navigate(['/proyectos']);
             form.reset();
           }
 
@@ -77,6 +90,22 @@ export class CreateComponent implements OnInit {
 
   fileChangeEvent(fileInput: any){
     this.filesToUpload= <Array<File>>fileInput.target.files;
+
+
+    if (this.filesToUpload && this.filesToUpload[0]) { 
+      console.log(this.filesToUpload);
+      var reader = new FileReader(); 
+      reader.readAsDataURL(this.filesToUpload[0]); 
+      console.log(reader);
+      reader.onload = function (e) { 
+          $('#preview + img').remove(); 
+          $('#preview').after('<img src="'+e.target.result+'" width="100%" />'); 
+      } 
+    } 
+
+    
   }
+
+
 
 }
