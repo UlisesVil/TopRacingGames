@@ -1,20 +1,24 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Inject, ViewChild, ElementRef } from '@angular/core';
 import { Project } from '../../models/project';
 import { Comment } from '../../models/comment';
 import { ProjectService } from '../../services/project.service';
 import { CommentService } from '../../services/comment.service';
 import { Global } from '../../services/global';
 import { Router, ActivatedRoute, Params } from '@angular/router';
+import { MatDialog } from '@angular/material/dialog';
+import { CommentDialogComponent } from '../../components/comment-dialog/comment-dialog.component';
+import { MatDialogRef, MAT_DIALOG_DATA } from '@angular/material/dialog';
+
 declare var $:any;
 
 @Component({
   selector: 'app-detail',
   templateUrl: './detail.component.html',
   styleUrls: ['./detail.component.css'],
-  providers:[ProjectService, CommentService],
+  providers:[ProjectService, CommentService ]
 })
-export class DetailComponent implements OnInit {
 
+export class DetailComponent implements OnInit {
   public url: string;
   public project: Project;
   public comment: Comment;
@@ -26,6 +30,7 @@ export class DetailComponent implements OnInit {
   public status: string;
   public payload: object;
   public comments: [];
+  public commentInd: [];
   public confirmDeleteComment: string;
 
   constructor(
@@ -33,11 +38,16 @@ export class DetailComponent implements OnInit {
     private _commentService: CommentService,
     private _router: Router,
     private _route: ActivatedRoute,
+    public dialog: MatDialog
+    
   ) { 
     this.url = Global.url;
     this.confirm= false;
     this.comment = new Comment('','','','','','');
     this.confirmDeleteComment="cancel";
+
+    
+
   }
 
   ngOnInit() {
@@ -47,6 +57,10 @@ export class DetailComponent implements OnInit {
      
 
       this.getComments(id);
+
+
+
+     
 
     });
 
@@ -151,6 +165,81 @@ export class DetailComponent implements OnInit {
       }
     )
   }
+
+
+  deleteComment(id){
+    console.log(id);
+
+    this._commentService.deleteComment(id).subscribe(
+      response=>{
+          if(response){
+            console.log(response);
+            window.location.reload();
+          }
+      },
+      error=>{
+        console.log(<any>error);
+        
+      }
+    );
+    
+  }
+
+
+  openDialog(comment, commentId){
+      console.log(comment);
+      console.log(commentId);
+      const dialogRef = this.dialog.open(CommentDialogComponent, {
+        data:{ 
+          comment: comment,
+          commentId: commentId
+        }
+      });
+
+      dialogRef.afterClosed().subscribe(res => {
+        console.log(res);
+        if(res){
+          console.log('Edit Comment');
+        }
+      
+      });
+  }
+
+
+  
+
+      //this._commentDialog.getComment(commentId);
+
+
+
+
+
+//let payload= JSON.parse(localStorage.getItem("payload"));
+/*
+      this._commentService.getComment(commentId).subscribe(
+        response => {
+          console.log(response);
+          if(response.comment){
+            this.commentInd = response.comment;
+            this.status='failed';
+            console.log(this.commentInd);
+            this.userloged=this.payload["name"];
+          }
+        },
+        error => {
+          console.log(<any>error);
+        }
+      )  
+*/
+      
+      
+     
+
+
+
+
+
+
 }
 
 

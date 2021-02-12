@@ -257,3 +257,11 @@ form input[disabled]{
 }
 
 
+
+html, body { height: 100%; }
+body { margin: 0; font-family: FrederickatheGreat, "Helvetica Neue", sans-serif; }
+#mat-dialog-0{
+    background: rgba(17, 0, 0, 0.884);
+    border: 5px solid red;
+    border-radius: 10px;
+  }

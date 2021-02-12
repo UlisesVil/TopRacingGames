@@ -23,6 +23,17 @@ export class MainComponent implements OnInit {
   }
 
   ngOnInit(): void {
+
+   
+/*
+  $(document).ready(function(){
+
+        var height = $(window).height();
+
+        $('#title').height(height);
+  });
+
+*/
     /*
     $(window).scroll(function(){
       let scrollTop = document.documentElement.scrollTop;
