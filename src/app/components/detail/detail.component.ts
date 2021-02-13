@@ -54,14 +54,7 @@ export class DetailComponent implements OnInit {
     this._route.params.subscribe(params=>{
       let id = params.id;
       this.getProject(id);
-     
-
       this.getComments(id);
-
-
-
-     
-
     });
 
     let payload= JSON.parse(localStorage.getItem("payload"));
@@ -71,15 +64,9 @@ export class DetailComponent implements OnInit {
       console.log(this.role);
       this.TOKEN_STRING = localStorage.getItem("token");
       this.payload=payload;
-      console.log(this.payload);
-      
+      console.log(this.payload); 
     }
   }
-
-  
-
-
-
 
 
   getProject(id){

@@ -19,6 +19,14 @@ $(document).ready(function() {
 
 
 
+$(window).ready(function(){
+    
+    var width = $(window).width();   
+    console.log(width);
+    $('#title').height(width*.553);
+    
+});
+
 
 
 $(window).scroll(function(){

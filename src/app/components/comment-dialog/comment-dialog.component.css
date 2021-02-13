@@ -1,7 +1,13 @@
 
-#mat-dialog-0{
-  background: black;
-  /*background: rgba(17, 0, 0, 0.884);*/
+#mat-dialog-0, #cdk-overlay-1, #mat-dialog-1{
+  /*background: black !important;*/
+  background: rgba(17, 0, 0, 0.884);
+}
+
+#mat-dialog-0, .mat-dialog-container{
+  background: rgba(17, 0, 0, 0.884);
+  border: 5px solid red !important;
+  border-radius: 10px !important;
 }
 
 
@@ -78,31 +84,6 @@
 }
 
 
-@media screen and (max-width: 800px){
-  .commentscont{
-    width: fit-content;
-    height: fit-content;
-    /*border: 1px solid red;*/
-    margin: 0px auto;
-  }
-  .custom-form {
-    width: 80%;
-    margin: 0px auto;
-    
-    
-  
-  
-  }
-
-  .inputForm{
-    margin: 2rem auto;
-    width: 95%;
-    border-radius: 0.5rem;
-    padding: 1rem 0 1rem 0rem;
-    
-  }
-}
-
 
 .button-cancel{
     
@@ -138,3 +119,38 @@
   top: 2px;
   box-shadow: 0px 0px 20px rgb(11, 2, 143);
 }
+
+
+
+
+
+@media screen and (max-width: 800px){
+  .commentscont{
+    width: fit-content;
+    height: fit-content;
+    /*border: 1px solid red;*/
+    margin: 0px auto;
+  }
+  .custom-form {
+    margin: 0px auto;
+    
+    
+  
+  
+  }
+
+  .inputForm{
+    margin: 2rem auto;
+    border-radius: 0.5rem;
+    padding: 1rem -0.3rem 1rem 0rem;
+    box-sizing: content-box;
+    
+  }
+
+  .button-cancel{
+    margin: 0px auto;
+  }
+
+  
+}
+

@@ -243,10 +243,6 @@ form input[disabled]{
     border:5px solid black !important;  
     box-shadow: none !important;
 }
-
-
-
-
 @media screen and (max-width: 500px){
 
     .bx-pager, .bx-default-pager{
@@ -258,10 +254,12 @@ form input[disabled]{
 
 
 
+
+
 html, body { height: 100%; }
 body { margin: 0; font-family: FrederickatheGreat, "Helvetica Neue", sans-serif; }
-#mat-dialog-0{
+#mat-dialog-0, .mat-dialog-container{
     background: rgba(17, 0, 0, 0.884);
-    border: 5px solid red;
-    border-radius: 10px;
+    border: 5px solid red !important;
+    border-radius: 10px !important;
   }
