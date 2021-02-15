@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
-import * as $ from 'jquery';
+//import * as $ from 'jquery';
 import { ActivatedRoute, Router } from '@angular/router';
+declare var $:any;
 
 @Component({
   selector: 'app-root',
@@ -25,6 +26,10 @@ export class AppComponent implements OnInit{
       console.log(this.role);
       this.TOKEN_STRING = localStorage.getItem("token");
     }
+
+
+    
+    
   }
 
   logout(){
@@ -35,4 +40,10 @@ export class AppComponent implements OnInit{
         window.location.reload();
       });
   } 
+
+  
+
+  
+
+
 }   

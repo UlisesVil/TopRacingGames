@@ -1,9 +1,46 @@
 "use strict"
 
 
+
+
 $(document).ready(function() {
+
+    //Nav-Bar
+    $(".mat-drawer-backdrop").click(function(){
+        console.log("Me llega el click del wall");
+        $('#transparentWall').removeAttr('style','background:red; width: 100%; height: 100vh; ');
+        $('mat-toolbar').removeAttr('style','background:red;');
+    });
+
+    $(".linkNav").click(function(){
+        console.log("Me llega el click del link");
+        $('#transparentWall').removeAttr('style','background:red; width: 100%; height: 100vh; ');
+        $('mat-toolbar').removeAttr('style','background:red; display:none');
+        //$('mat-sidenav').attr('style','display:none');
+
+        //$('mat-sidenav').removeAttr('style','display:none');
+
+        //mat-sidenav-container
+        //mat-drawer-container-has-open
+        //$('mat-sidenav-container').removeClass('mat-drawer-container-has-open');
+        
+        //div
+        //mat-drawer-shown
+           // $('div').removeClass('mat-drawer-shown');
+
+            //$('mat-sidenav-container').removeClass('mat-drawer-transition');
+        
+
+
+           
+    });
+    $("#buttonNav2").click(function(){
+        console.log('recibo el clic del 2do botton');
+        $('#transparentWall').removeAttr('style','background:red; width: 100%; height: 100vh; ');
+        $('mat-toolbar').removeAttr('style','background:red; display:none');
+    });
    
-     //Button Upload Personalized 
+    //Personalized Button Upload  
     $('input[type=file]').change(function(){
         var filename = $(this).val().split('\\').pop();
         var idname = $(this).attr('id');
@@ -23,7 +60,7 @@ $(window).ready(function(){
     
     var width = $(window).width();   
     console.log(width);
-    $('#title').height(width*.553);
+    $('#title').height(width*.568);
     
 });
 

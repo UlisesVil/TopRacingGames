@@ -22,6 +22,12 @@ import { SliderComponent } from './components/slider/slider.component';
 import { ResaltadoDirective } from './resaltado.directive';
 import { GalleryComponent } from './components/gallery/gallery.component';
 import { CommentDialogComponent } from './components/comment-dialog/comment-dialog.component';
+import { MainNavComponent } from './components/main-nav/main-nav.component';
+import { LayoutModule } from '@angular/cdk/layout';
+import { MatToolbarModule } from '@angular/material/toolbar';
+import { MatSidenavModule } from '@angular/material/sidenav';
+import { MatIconModule } from '@angular/material/icon';
+import { MatListModule } from '@angular/material/list';
 
 
 //import * as $ from 'jquery';
@@ -43,7 +49,8 @@ import { CommentDialogComponent } from './components/comment-dialog/comment-dial
     LoginComponent,
     RegisterComponent,
     GalleryComponent,
-    CommentDialogComponent    
+    CommentDialogComponent,
+    MainNavComponent    
   ],
   imports: [
     BrowserModule,
@@ -52,7 +59,7 @@ import { CommentDialogComponent } from './components/comment-dialog/comment-dial
     FormsModule,
     BrowserAnimationsModule,
     MatDialogModule, 
-    MatButtonModule
+    MatButtonModule, LayoutModule, MatToolbarModule, MatSidenavModule, MatIconModule, MatListModule
   ],
   entryComponents:[
     CommentDialogComponent

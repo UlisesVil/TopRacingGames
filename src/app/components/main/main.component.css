@@ -31,7 +31,7 @@
     width: 80%;
     height: 100%;
     /*border: 1px solid green;*/
-    margin: 0px auto;
+    margin: 49px auto;
 }
 
 .titleContent p{
@@ -57,7 +57,7 @@
     background-attachment: fixed;
     outline: none;
     align-items: center;
-    top: 30px;
+    top: 49px;
     /*border: 1px solid red;*/
 
 }

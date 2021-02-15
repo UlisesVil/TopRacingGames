@@ -28,7 +28,7 @@ export class MainComponent implements OnInit {
   
       var width = $(window).width();
       console.log(width);
-      $('#title').height(width*.553);  
+      $('#title').height(width*.568);  
         
     }
     window.addEventListener('resize', getBom);
@@ -55,6 +55,8 @@ export class MainComponent implements OnInit {
   });*/
    
   }
+
+ 
 
 /*
   setCurrentTime(value){
