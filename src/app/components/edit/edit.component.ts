@@ -30,7 +30,7 @@ export class EditComponent implements OnInit {
     private _route: ActivatedRoute,
     private _router: Router
   ) {
-    this.title = "Editar Proyecto";
+    this.title = "Editar Articulo";
     this.url = Global.url;
    }
 
@@ -118,5 +118,8 @@ export class EditComponent implements OnInit {
     } 
 
   }
+
+
+
 
 }

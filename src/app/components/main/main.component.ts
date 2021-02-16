@@ -28,7 +28,7 @@ export class MainComponent implements OnInit {
   
       var width = $(window).width();
       console.log(width);
-      $('#title').height(width*.568);  
+      $('#title').height(width*.575);  
         
     }
     window.addEventListener('resize', getBom);

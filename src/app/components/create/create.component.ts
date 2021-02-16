@@ -27,7 +27,7 @@ export class CreateComponent implements OnInit {
     private _uploadService: UploadService,
     private _router: Router
   ) {
-    this.title = "Crear Proyecto";
+    this.title = "Crear Articulo";
     this.project = new Project('','','','',null,'','');
 
    }
@@ -108,6 +108,8 @@ export class CreateComponent implements OnInit {
 
     
   }
+
+
 
 
 

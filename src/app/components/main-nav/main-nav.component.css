@@ -76,18 +76,20 @@
   margin: 0px auto;
   text-align: center;
   line-height: 50px;
+  /*border: 1px solid red;*/
 }
 
 .linkToolbar{
   display: inline-block;
   padding-right: 20px;
   padding-left: 20px;
-  height: inherit;
+  height: fit-content;
   text-decoration: none;
   color: white;
   transition: all 800ms;
   font-size: 15px;
   cursor: pointer;
+  /*border: 1px solid red;*/
 }
 
 .linkToolbar:hover,
@@ -98,11 +100,16 @@
 
 
 
+@media (max-width: 800px){
 
+  .linkToolbar{
+    
+    padding-right: 10px;
+    padding-left: 10px;
+    
+  }
 
-
-
-
+}
 
 
 @media (min-width: 600px){

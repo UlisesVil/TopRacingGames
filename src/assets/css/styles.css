@@ -76,6 +76,33 @@ body{
     clear: both;
 }
 
+::-webkit-scrollbar-corner {
+    border-radius: 2px;
+    cursor: pointer;
+  }
+  
+  ::-webkit-scrollbar {
+    width: 10px;
+  }
+  
+  ::-webkit-scrollbar-track {
+    border-radius: 20px;
+    background: #2c2b2b;
+  }
+  
+  ::-webkit-scrollbar-thumb {
+    background: #990202;
+    border-radius: 20px;
+    width: 10px;
+    cursor: pointer;
+  }
+  
+  ::-webkit-scrollbar-thumb:hover {
+    background: red;
+    border-radius: 20px;
+    width: 10px;
+  }
+
 
 /*Barra de Navegacion / Cabecera */
 
@@ -92,43 +119,6 @@ header{
     z-index: 4;
     white-space: nowrap;
 }
-/*
-header ul{
-    display: block;
-    width: fit-content;
-    height: fit-content;
-    margin: 0px auto;
-    margin-top: -3px;
-    border: 1px solid red;
-}
-
-header ul li{
-    display: inline-block;
-    margin: 0px auto;
-    text-align: center;
-    line-height: 50px;
-}
-
-header a{
-    display: inline-block;
-    padding-right: 20px;
-    padding-left: 20px;
-    height: inherit;
-    text-decoration: none;
-    color: white;
-    transition: all 800ms;
-    font-size: 15px;
-    cursor: pointer;
-}
-
-header a:hover,
-.actived{      
-    background: rgba(0,0,0,0.8);
-    border-radius: 30px;
-}
-*/
-/*Se agrega la clase activated y [routerLinkActive]="['actived']" en las rutas en el archivo app.component.html */
-
 
 
 /*Contenedor Principal*/
@@ -267,9 +257,10 @@ form input[disabled]{
 
 
 
-
+/*
 html, body { height: 100%; }
 body { margin: 0; font-family: FrederickatheGreat, "Helvetica Neue", sans-serif; }
+*/
 #mat-dialog-0, .mat-dialog-container{
     background: rgba(17, 0, 0, 0.884);
     border: 5px solid red !important;

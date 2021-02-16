@@ -26,7 +26,8 @@
 
 h2{
     text-align: center;
-    margin: 30px 0px;
+    margin: 5px 0px;
+    font-size: 20px;
 }
 
   .custom-form {
@@ -38,7 +39,7 @@ h2{
     box-shadow: 13px 13px 20px #fc0000, -13px -13px 20px #042b72;
     color: white;
     text-shadow: 5px 5px 5px black;
-    margin-top: 50px;
+    margin-top: 20px;
     background-image: url(../../../assets/img/flag.jpg);
     background-size: cover;
     /*border: 1px solid red;*/
@@ -59,7 +60,6 @@ h2{
   .sendButton{
     position: relative;
     display: block;
-    text-transform: uppercase;
     letter-spacing: 0.15em;
     border: 1px solid red;
     border-left: 8px solid red;
@@ -70,9 +70,9 @@ h2{
     font-weight: bold;
     background-color: #00000093;
     width: fit-content;
-    padding: 0.575rem 1rem;
+    padding: 0.5rem 2rem;
     cursor: pointer;
-    margin: 0px auto;
+    margin: 0px 5px;
     outline: none;
   }
 
@@ -146,3 +146,50 @@ h2{
     .imgprev{
       width: 100px !important;
     }
+
+    
+  .editbuttons{
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    margin-top: 10px;
+    /*border: 1px solid red;*/
+    }
+
+
+.button-cancel{
+  height: fit-content;
+  position: relative;
+  display: block;
+  letter-spacing: 0.15em;
+  border-bottom-left-radius: 10px;
+  border-top-right-radius: 10px;
+  font-size: 0.975rem;
+  background-color: #00000093;
+  width: fit-content;
+  padding: 0.175rem 1rem;
+  cursor: pointer;
+  outline: none;
+  text-decoration: none;
+  margin: 0px 20px;
+}
+
+.button-cancel{
+  width: fit-content;
+  background-color: #e7741693;
+  border: 1px solid rgb(255, 145, 0);
+  border-left: 8px solid rgb(255, 145, 0);
+   
+}
+
+
+
+.button-cancel:hover{
+    top: -3px;
+    box-shadow: 0px 0px 20px red;
+}
+
+.button-cancel:active{
+    top: 2px;
+    box-shadow: 0px 0px 20px rgb(11, 2, 143);
+}

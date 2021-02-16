@@ -137,6 +137,11 @@
         font-size: 30px;
        
     }
+
+    .titleContent{
+        
+        margin: 20px auto 30px;
+    }
     
 
 
@@ -172,6 +177,10 @@
 
         font-size: 7px;
     
+    }
+    .titleContent{
+        
+        margin: 10px auto 40px;
     }
     
 

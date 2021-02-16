@@ -9,7 +9,7 @@
         </div>
     -->      
         <div class="message failed" *ngIf="status=='failed'">
-            El proyecto NO SE HA PODIDO CREAR
+            El ARTICULO NO SE HA PODIDO CREAR
         </div>
 
 
@@ -72,9 +72,11 @@
 <div class="indicador"><span>Subir Imagen</span></div>
 </label> 
 
+        <span class="editbuttons">
 
-
+            <div *ngIf="project._id" [routerLink]="['/proyecto', project._id]" class="button-cancel">Cancelar</div>
             <input class="sendButton" type="submit" value="Enviar" [disabled]="!projectForm.form.valid"/>
+        </span>
         </form>
     </div>
 
