@@ -152,7 +152,7 @@ margin-top: 10px;
   width: fit-content;
   padding: 0.575rem 1rem;
   cursor: pointer;
-  margin: 0px auto;
+  margin: 90px auto 0px;
   outline: none;
 }
 
@@ -183,6 +183,7 @@ h3{
   height: fit-content;
   margin: 20px auto;
   /*border: 1px solid red;*/
+  
 
 }
 
@@ -200,12 +201,30 @@ h3{
   margin-top: 20px;
   left: 15px;
   text-align: justify;
+ 
 }
 
 .commentbuttons{
   display: flex;
   margin-top: 10px;
   margin-bottom: 10px;
+}
+
+#commentArea{
+  position: absolute;
+  z-index:-1;
+}
+#hidde{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  position: relative;
+  background: black;
+  padding:0px;
+  z-index:3;
+  top:14px;
+  /*border: 1px solid red;*/
 }
 
 

@@ -51,14 +51,15 @@
 
            <form class="custom-form" #commentForm="ngForm" (ngSubmit)="onSubmit(commentForm)">
             <div class="titleform">Queremos saber tu Opinion</div>
-                    <p>
-                        
-                        <textarea class="inputForm" name="comment" #comment="ngModel" [(ngModel)]="comment.comment" placeholder="Comentario" required>
-                        </textarea>
+                    <div>
+                        <div id="hidde" (click)="commentDisabled()">
+                            <textarea id="commentArea" class="inputForm" name="comment" #comment="ngModel" [(ngModel)]="comment.comment" placeholder="Comentario" [disabled]="!userloged" required>
+                            </textarea>
+                        </div>
                         <span class="form_error" *ngIf="comment.touched && !comment.valid">
                             <strong>*Escribe algo para guardar tu comentario</strong>
                         </span>
-                    </p>
+                    </div>
 
                 <input id="sendButton" type="submit" value="Enviar" [disabled]="!commentForm.form.valid"/>
 
@@ -75,26 +76,26 @@
                     
                     <p class="textcomment">{{comment.comment}}</p>
 
+                    <div *ngIf="userloged">
+                        <div *ngIf="comment.userName==userloged">
+                            <p *ngIf="confirmDeleteComment=='cancel'" >
+                                <span class="commentbuttons">
+                                    <a (click)="openDialog(comment.comment, comment._id)" class="button-edit">Editar</a>
+                                    <a (click)="setConfirmEraseComment(comment._id)" class="button-delete">Borrar</a>
+                                </span>
+                            </p>
+                            <p *ngIf="confirmDeleteComment==comment._id " >
+                                <span class="confirm">
+                                    ¿Estas seguro de ELIMINAR este Comentario?<br/>
+                                </span>
+                                <span class="commentbuttons">
+                                    <a (click)="setConfirmEraseComment('cancel')" class="button-edit">Cancelar</a>
+                                    <a (click)="deleteComment(comment._id)" class="button-delete">Eliminar definitivamente</a>
+                                </span>
+                            </p>
+                        </div>
 
-                    <div *ngIf="comment.userName==userloged">
-                        <p *ngIf="confirmDeleteComment=='cancel'" >
-                            <span class="commentbuttons">
-                                <a (click)="openDialog(comment.comment, comment._id)" class="button-edit">Editar</a>
-                                <a (click)="setConfirmEraseComment(comment._id)" class="button-delete">Borrar</a>
-                            </span>
-                        </p>
-                        <p *ngIf="confirmDeleteComment==comment._id " >
-                            <span class="confirm">
-                                ¿Estas seguro de ELIMINAR este Comentario?<br/>
-                            </span>
-                            <span class="commentbuttons">
-                                <a (click)="setConfirmEraseComment('cancel')" class="button-edit">Cancelar</a>
-                                <a (click)="deleteComment(comment._id)" class="button-delete">Eliminar definitivamente</a>
-                            </span>
-                        </p>
                     </div>
-
-
                 </div>
 
             </div>

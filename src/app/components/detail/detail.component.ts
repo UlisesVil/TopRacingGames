@@ -8,6 +8,8 @@ import { Router, ActivatedRoute, Params } from '@angular/router';
 import { MatDialog } from '@angular/material/dialog';
 import { CommentDialogComponent } from '../../components/comment-dialog/comment-dialog.component';
 import { MatDialogRef, MAT_DIALOG_DATA } from '@angular/material/dialog';
+import { DialogCommentDisabledComponent } from '../../components/dialog-comment-disabled/dialog-comment-disabled.component';
+
 
 declare var $:any;
 
@@ -55,6 +57,9 @@ export class DetailComponent implements OnInit {
       let id = params.id;
       this.getProject(id);
       this.getComments(id);
+
+
+
     });
 
     let payload= JSON.parse(localStorage.getItem("payload"));
@@ -65,7 +70,15 @@ export class DetailComponent implements OnInit {
       this.TOKEN_STRING = localStorage.getItem("token");
       this.payload=payload;
       console.log(this.payload); 
+      this.userloged=this.payload["name"];
     }
+
+
+
+    
+    
+        
+    
   }
 
 
@@ -117,9 +130,13 @@ export class DetailComponent implements OnInit {
     this._commentService.saveComment(this.comment).subscribe(
       response=>{
         console.log(response);
-        if(!response.comment){
+        if(response.comment){
           this.save_comment= response.comment;
           this.status = 'succes';
+          //this._router.navigate(['/proyecto/'+this.project._id])
+            //.then(() => {
+              window.location.reload();
+            //});
           
         }else{
           status='failed';
@@ -129,8 +146,8 @@ export class DetailComponent implements OnInit {
         console.log(<any>error);
       }
     );
-    form.reset();
-    window.location.reload();
+    
+    //window.location.reload();
   }
 
 
@@ -144,7 +161,7 @@ export class DetailComponent implements OnInit {
           this.comments = response.comment;
           this.status='failed';
           console.log(this.comments);
-          this.userloged=this.payload["name"];
+          //this.userloged=this.payload["name"];
         }
       },
       error => {
@@ -193,7 +210,36 @@ export class DetailComponent implements OnInit {
   }
 
 
-  
+
+
+  commentDisabled(){
+      let commentArea= document.getElementById('commentArea');
+      let atribute=$('#commentArea').attr('ng-reflect-is-disabled');
+      if(atribute=='true'){
+        console.log(atribute);
+        console.log('estoy deshabilitado con true');
+
+        const dialogRef = this.dialog.open(DialogCommentDisabledComponent,{
+          data: 'You Must be Loged in to publish a comment!!!!'
+        });
+
+        dialogRef.afterClosed().subscribe(res=>{
+          console.log(res);
+          if(res){
+            console.log('esta es la res');
+            
+          }
+        });
+
+      }else{
+        console.log(atribute);
+        console.log('estoy habilitado con false');
+      }
+      
+      
+
+
+  }
 
       //this._commentDialog.getComment(commentId);
 

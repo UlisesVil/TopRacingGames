@@ -27,6 +27,7 @@ import { MatToolbarModule } from '@angular/material/toolbar';
 import { MatSidenavModule } from '@angular/material/sidenav';
 import { MatIconModule } from '@angular/material/icon';
 import { MatListModule } from '@angular/material/list';
+import { DialogCommentDisabledComponent } from './components/dialog-comment-disabled/dialog-comment-disabled.component';
 
 
 //import * as $ from 'jquery';
@@ -48,7 +49,8 @@ import { MatListModule } from '@angular/material/list';
     RegisterComponent,
     GalleryComponent,
     CommentDialogComponent,
-    MainNavComponent    
+    MainNavComponent,
+    DialogCommentDisabledComponent    
   ],
   imports: [
     BrowserModule,
@@ -60,7 +62,8 @@ import { MatListModule } from '@angular/material/list';
     MatButtonModule, LayoutModule, MatToolbarModule, MatSidenavModule, MatIconModule, MatListModule
   ],
   entryComponents:[
-    CommentDialogComponent
+    CommentDialogComponent,
+    DialogCommentDisabledComponent
   ],
   providers: [
     appRoutingProviders

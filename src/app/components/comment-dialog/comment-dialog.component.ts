@@ -46,6 +46,7 @@ export class CommentDialogComponent implements OnInit {
         if(response.comment){
           this.edit_comment= response.comment;
           this.status = 'succes';
+          window.location.reload();
         }
             
       },
@@ -55,7 +56,7 @@ export class CommentDialogComponent implements OnInit {
       
 
     );
-    window.location.reload();
+   
 
 
 
