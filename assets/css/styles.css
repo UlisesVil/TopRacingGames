@@ -1,0 +1,268 @@
+/*
+Este nuevo css debe cargarse en angular.json en styles "src/assets/styles.css"
+*/
+@font-face{
+    font-family: bangers;
+    src: url(../fonts/bangers.ttf) format('truetype');
+}
+@font-face{
+    font-family: russoOne;
+    src: url(../fonts/russoOne.ttf) format('truetype');
+}
+@font-face{
+    font-family: faster;
+    src: url(../fonts/FasterOne.ttf) format('truetype');
+}
+
+@font-face{
+    font-family: Audiowide;
+    src: url(../fonts/Audiowide.ttf) format('truetype');
+}
+@font-face{
+    font-family: BungeeInline;
+    src: url(../fonts/BungeeInline.ttf) format('truetype');
+}
+@font-face{
+    font-family: BungeeShade;
+    src: url(../fonts/BungeeShade.ttf) format('truetype');
+}
+
+@font-face{
+    font-family: FrederickatheGreat;
+    src: url(../fonts/FrederickatheGreat.ttf) format('truetype');
+}
+@font-face{
+    font-family: Frijole;
+    src: url(../fonts/Frijole.ttf) format('truetype');
+}
+@font-face{
+    font-family: FugazOne;
+    src: url(../fonts/FugazOne.ttf) format('truetype');
+}
+
+@font-face{
+    font-family: SigmarOne;
+    src: url(../fonts/SigmarOne.ttf) format('truetype');
+}
+@font-face{
+    font-family: Slackey;
+    src: url(../fonts/Slackey.ttf) format('truetype');
+}
+@font-face{
+    font-family: TitanOne;
+    src: url(../fonts/TitanOne.ttf) format('truetype');
+}
+
+
+
+/*Generales*/
+
+*{
+    margin: 0px;
+    padding: 0px;
+    color:white;
+    
+}
+
+body{
+   font-family: FrederickatheGreat;
+   font-size: 20px;
+   background: black;
+   /*background-attachment: fixed; *//* esto hace que el body se quede fijo y al hacer scroll el fondo no se mueva*/
+}
+
+.clearfix{
+    float: none;
+    clear: both;
+}
+
+::-webkit-scrollbar-corner {
+    border-radius: 2px;
+    cursor: pointer;
+  }
+  
+  ::-webkit-scrollbar {
+    width: 10px;
+  }
+  
+  ::-webkit-scrollbar-track {
+    border-radius: 20px;
+    background: #2c2b2b;
+  }
+  
+  ::-webkit-scrollbar-thumb {
+    background: #990202;
+    border-radius: 20px;
+    width: 10px;
+    cursor: pointer;
+  }
+  
+  ::-webkit-scrollbar-thumb:hover {
+    background: red;
+    border-radius: 20px;
+    width: 10px;
+  }
+
+
+/*Barra de Navegacion / Cabecera */
+
+header{
+    position: fixed;
+    display: block;
+    width: 100%;
+    height: fit-content;
+    display: block;
+    /*background: rgba(0, 0, 0, 0.8);*/
+    position: fixed;
+    text-transform: uppercase;
+    margin: 0px auto;
+    z-index: 4;
+    white-space: nowrap;
+}
+
+
+/*Contenedor Principal*/
+
+#content{
+   
+    width: 100%;
+    min-height: 78vh;
+    height: auto;
+    margin: 0px auto;
+    box-shadow: 0px 0px 40px black;
+    background: transparent;
+    padding-top: 52px;
+    color: white;
+    
+}
+
+/*Pie de pagina*/
+
+footer{
+    width: 75%;
+    margin: 0px auto;
+    padding-top: 15px;
+    color: rgb(250, 245, 245);
+}
+
+
+
+
+.about{
+    width: 70%;
+    margin: 0px auto;
+    margin-bottom: 20px;
+    font-size: 23px;
+}
+.about h2{
+    border-bottom: 1px solid #ccc;
+    padding-bottom: 5px;
+    margin-bottom: 5px;
+}
+
+.about p{
+    padding-top: 20px;
+    padding-bottom: 30px;
+    text-align: justify;
+}
+
+/*Seccion con formulario*/
+
+form input[type="text"],
+form input[type="number"],
+form input[type="email"],
+form textarea{
+    width: 40%;
+    padding: 5px;
+    /*border: 1px solid red;*/
+}
+
+
+form input[disabled]{
+   opacity: 0.3;
+   cursor: not-allowed;
+}
+
+.form_error{
+    font-size: 20px;
+    padding: 3px;
+    color: red;
+    margin-left: 5px;
+    text-shadow: 5px 5px 5px black;
+    background-color: rgba(0, 0, 0, 0.7);
+    border-radius: 5px;
+}
+
+.message{
+    width: 50%;
+    padding: 5px;
+    border: 1px solid #eee;
+
+}
+
+.success{
+    background: green;
+    color: white;
+}
+
+.message a {
+    color: white;
+}
+
+.failed{
+    background:red;
+    color: white;
+}
+
+
+
+
+.confirm{
+    display: block;
+    margin-top: 20px;
+    margin-left: 25px;
+    margin-bottom: 5px;
+    color: red;
+}
+
+
+
+
+
+/*Slider*/
+
+
+.bx-next .bx-prev{
+    position: absolute;
+    z-index: -1 !important;
+    display: none;
+}
+
+.bx-wrapper, .bx-viewport{
+    margin: 17px auto;
+   
+    background-color: black !important;
+    border:5px solid black !important;  
+    box-shadow: none !important;
+}
+@media screen and (max-width: 500px){
+
+    .bx-pager, .bx-default-pager{
+     
+        bottom: -100px !important;
+    }
+
+}
+
+
+
+
+/*
+html, body { height: 100%; }
+body { margin: 0; font-family: FrederickatheGreat, "Helvetica Neue", sans-serif; }
+*/
+#mat-dialog-0, .mat-dialog-container{
+    background: rgba(17, 0, 0, 0.884);
+    border: 5px solid red !important;
+    border-radius: 10px !important;
+  }
