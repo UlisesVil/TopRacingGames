@@ -1,9 +1,39 @@
-<div mat-dialog-content>
+<div class="message">
     <!--You Must be Loged in to publish a comment!!!!-->
-    {{message}}
+    {{data.message}}
+    
 </div>
 
+<form class="custom-form" #loginForm="ngForm" (ngSubmit)="onSubmit(loginForm)">
+
+    <h1>Login:</h1>
+    <input class="inputForm" type="hidden" name="projectId" #projectId="ngModel" [(ngModel)]="data.projectId" required/>
+    <!--<label for="email">E-mail</label>-->
+    <input class="inputForm" type="email" name="email" #email="ngModel" [(ngModel)]="register.email" placeholder="Email" required/>
+    <span class="form_error" *ngIf="email.touched && !email.valid">
+        <strong>*El E-mail es Obligatorio</strong>
+    </span>
+      
+    
+    <input class="inputForm" type="hidden" name="role" #name="ngModel" [(ngModel)]="register.role" placeholder="role"/>
+    
+    <!--<label for="password">Password</label>-->
+    <input class="inputForm" type="password" name="password" #password="ngModel" [(ngModel)]="register.password" placeholder="Password" required/>
+    <span class="form_error" *ngIf="password.touched && !password.valid">
+        <strong>*El Password es Obligatorio</strong>
+    </span>
+
+    <!--<label for="confirmPassword">Confirmar Password</label>-->
+    <input class="inputForm" type="password" name="confirmPassword" #confirmPassword="ngModel" [(ngModel)]="register.confirmPassword" placeholder="confirmPassword" required/>
+    <span class="form_error" *ngIf="confirmPassword.touched && !confirmPassword.valid">
+        <strong>*Debes Confirmar tu Password</strong>
+    </span>
+
+
+    <input id="sendButtonform" type="submit" value="Go!!!" [disabled]="!loginForm.form.valid || password.value !== confirmPassword.value"/>
+</form>
+
 <div mat-dialog-actions>
-    <button mat-button (click)="onClickNO()">No Thanks!!</button>
-    <button mat-button [mat-dialog-close]="true">Let's Login</button>
+    <button class="button-cancel" (click)="onClickNO()">No Thanks!!</button>
+    
 </div>

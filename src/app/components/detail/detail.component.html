@@ -46,13 +46,11 @@
                 Hemos recibido tu Comentario Correctamente!!!
             </div>
 
-
-
-
-           <form class="custom-form" #commentForm="ngForm" (ngSubmit)="onSubmit(commentForm)">
+            <form class="custom-form" #commentForm="ngForm" (ngSubmit)="onSubmit(commentForm)">
             <div class="titleform">Queremos saber tu Opinion</div>
                     <div>
-                        <div id="hidde" (click)="commentDisabled()">
+                        <div id="hidde" (click)="commentDisabled(project._id)">
+                           
                             <textarea id="commentArea" class="inputForm" name="comment" #comment="ngModel" [(ngModel)]="comment.comment" placeholder="Comentario" [disabled]="!userloged" required>
                             </textarea>
                         </div>

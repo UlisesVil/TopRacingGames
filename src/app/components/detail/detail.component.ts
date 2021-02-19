@@ -212,16 +212,25 @@ export class DetailComponent implements OnInit {
 
 
 
-  commentDisabled(){
+  commentDisabled(id){
+    let projectId=id;
+    console.log(projectId);
+    
       let commentArea= document.getElementById('commentArea');
       let atribute=$('#commentArea').attr('ng-reflect-is-disabled');
-      if(atribute=='true'){
-        console.log(atribute);
+      let atributeDisabled=$('#commentArea').attr('disabled');
+      if(atribute=='true'||atributeDisabled=='disabled'){
+        console.log(atribute+"Este es atribute");
+        console.log(atributeDisabled+"Este es atributeDisabled");
         console.log('estoy deshabilitado con true');
 
         const dialogRef = this.dialog.open(DialogCommentDisabledComponent,{
-          data: 'You Must be Loged in to publish a comment!!!!'
+          data: {
+            message:'You Must be Loged in to publish a comment!!!!',
+            projectId: projectId
+          }
         });
+
 
         dialogRef.afterClosed().subscribe(res=>{
           console.log(res);
