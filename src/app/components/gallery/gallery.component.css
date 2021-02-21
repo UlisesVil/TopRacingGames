@@ -1,12 +1,14 @@
-
-
 input{
     color: black;
 }
 
 h2{
+    font-size: 30px;
     text-align: center;
     margin: 10px 0px 30px;
-    font-size: 30px;
 }
 
+button{
+    width: 100px;
+    height: fit-content;
+}

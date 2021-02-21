@@ -13,16 +13,12 @@
 }
 
 .mat-toolbar.mat-primary {
+  position: sticky;
   height: 49px;
   background-color: rgba(0, 0, 0, 0.438);
-  position: sticky;
   top: 0;
   z-index: 1;
 }
-
-
-
-
 
 .ulNav{
   display: flex;
@@ -32,24 +28,22 @@
   justify-content: left;
   margin: 0px auto;
   margin-top: -3px;
-  /*border: 1px solid red;*/
 }
 
 .liNav{
   display: inline-block;
   line-height: 40px;
-  /*border: 1px solid red;*/
 }
 
 .linkNav{
   display: inline-block;
+  height: inherit;
   padding-right: 20px;
   padding-left: 20px;
-  height: inherit;
+  font-size: 15px;
   text-decoration: none;
   color: white;
   transition: all 800ms;
-  font-size: 15px;
   cursor: pointer;
 }
 
@@ -59,16 +53,12 @@
   border-radius: 30px;
 }
 
-
-
-
 .ulToolbar{
   display: block;
   width: fit-content;
   height: fit-content;
   margin: 0px auto;
   margin-top: -3px;
-  /*border: 1px solid red;*/
 }
 
 .liToolbar{
@@ -76,20 +66,18 @@
   margin: 0px auto;
   text-align: center;
   line-height: 50px;
-  /*border: 1px solid red;*/
 }
 
 .linkToolbar{
   display: inline-block;
+  height: fit-content;
   padding-right: 20px;
   padding-left: 20px;
-  height: fit-content;
   text-decoration: none;
+  font-size: 15px;
   color: white;
   transition: all 800ms;
-  font-size: 15px;
   cursor: pointer;
-  /*border: 1px solid red;*/
 }
 
 .linkToolbar:hover,
@@ -98,17 +86,12 @@
   border-radius: 30px;
 }
 
-
-
 @media (max-width: 800px){
 
   .linkToolbar{
-    
     padding-right: 10px;
     padding-left: 10px;
-    
   }
-
 }
 
 
@@ -121,12 +104,11 @@
   button{
     display: none;
   }
-  
-
 }
 
 
 @media (max-width: 599px){
+  
   .ulToolbar{
     display: none;
   }

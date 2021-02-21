@@ -7,14 +7,12 @@
             </div>
 
             <div class="data">
-            
 
                 <p>Tipo de Vehiculos: {{project.category}}</p>
                 <p>Disponible en: {{project.langs}}</p>
                 <br>
                 <p class="description">{{project.description}}</p>
                 
-
                 <div *ngIf="TOKEN_STRING && role=='admin'">
                     <p *ngIf="confirm==false" >
                         <span class="editbuttons">
@@ -39,7 +37,6 @@
         <div class="commentscont">
             <h2>Comentarios</h2>
 
-
             <div class="message succes" *ngIf="staus=='succes'">
                 Gracias
                 {{comment.userName}}
@@ -47,33 +44,23 @@
             </div>
 
             <form class="custom-form" #commentForm="ngForm" (ngSubmit)="onSubmit(commentForm)">
-            <div class="titleform">Queremos saber tu Opinion</div>
-                    <div>
-                        <div id="hidde" (click)="commentDisabled(project._id)">
-                           
-                            <textarea id="commentArea" class="inputForm" name="comment" #comment="ngModel" [(ngModel)]="comment.comment" placeholder="Comentario" [disabled]="!userloged" required>
-                            </textarea>
-                        </div>
-                        <span class="form_error" *ngIf="comment.touched && !comment.valid">
-                            <strong>*Escribe algo para guardar tu comentario</strong>
-                        </span>
+                <div class="titleform">Queremos saber tu Opinion</div>
+                <div>
+                    <div id="hidde" (click)="commentDisabled(project._id)">
+                        <textarea id="commentArea" class="inputForm" name="comment" #comment="ngModel" [(ngModel)]="comment.comment" placeholder="Comentario" [disabled]="!userloged" required>
+                        </textarea>
                     </div>
-
+                    <span class="form_error" *ngIf="comment.touched && !comment.valid">
+                        <strong>*Escribe algo para guardar tu comentario</strong>
+                    </span>
+                </div>
                 <input id="sendButton" type="submit" value="Enviar" [disabled]="!commentForm.form.valid"/>
-
             </form>
 
-
-
-           
-
-           
             <div class="commentBox">
                 <div class="commentInd" *ngFor='let comment of comments'>
                     <h3>{{comment.userName}} | <span class="date">{{comment.date_comment |date:"mediumDate" }}</span></h3>
-                    
                     <p class="textcomment">{{comment.comment}}</p>
-
                     <div *ngIf="userloged">
                         <div *ngIf="comment.userName==userloged">
                             <p *ngIf="confirmDeleteComment=='cancel'" >
@@ -82,7 +69,7 @@
                                     <a (click)="setConfirmEraseComment(comment._id)" class="button-delete">Borrar</a>
                                 </span>
                             </p>
-                            <p *ngIf="confirmDeleteComment==comment._id " >
+                            <p *ngIf="confirmDeleteComment==comment._id ">
                                 <span class="confirm">
                                     ¿Estas seguro de ELIMINAR este Comentario?<br/>
                                 </span>
@@ -92,16 +79,10 @@
                                 </span>
                             </p>
                         </div>
-
                     </div>
                 </div>
-
             </div>
-
-
-           
-            
-            
+        </div>
     </div>
 </div>
 

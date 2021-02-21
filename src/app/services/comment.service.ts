@@ -4,24 +4,19 @@ import { Observable } from 'rxjs/Observable';
 import { Comment } from '../models/comment';
 import { Global } from './global';
 
-
 @Injectable()
 export class CommentService{
     public url: string;
 
-
     constructor(
         private _http: HttpClient
-    ){
+     ){
         this.url = Global.url;
     }
 
     saveComment( comment: Comment): Observable<any>{
         let params = JSON.stringify(comment);
-        console.log(comment);
-        
         let headers = new HttpHeaders().set('Content-Type','application/json');
-
         return this._http.post(this.url+'save-comment', params, {headers:headers});
     }
 
@@ -37,21 +32,12 @@ export class CommentService{
 
     editComment( comment: Comment): Observable<any>{
         let params = JSON.stringify(comment);
-        console.log(comment);
-
         let headers = new HttpHeaders().set('Content-type','application/json');
         return this._http.put(this.url+'edit-comment', params, {headers: headers});
-        
     }
 
     deleteComment(id): Observable<any>{
-        console.log(id);
-        
         let headers=new HttpHeaders().set('Content-Type','application/json');
         return this._http.delete(this.url+'comment/'+id, {headers:headers});
     }
-
-
-
-
 }

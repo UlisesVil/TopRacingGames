@@ -1,8 +1,9 @@
 <mat-sidenav-container class="sidenav-container">
-  <mat-sidenav #drawer class="sidenav" fixedInViewport
-      [attr.role]="(isHandset$ | async) ? 'dialog' : 'navigation'"
-      [mode]="(isHandset$ | async) ? 'over' : 'side'"
-      [opened]="(isHandset$ | async) === false">
+  <mat-sidenav #drawer class="sidenav" 
+    fixedInViewport
+    [attr.role]="(isHandset$ | async) ? 'dialog' : 'navigation'"
+    [mode]="(isHandset$ | async) ? 'over' : 'side'"
+    [opened]="(isHandset$ | async) === false">
     <mat-toolbar>
       <button
         id="buttonNav2"
@@ -15,29 +16,21 @@
       </button>
     </mat-toolbar>
     <mat-nav-list>
-
-
-  <ul class="ulNav">
-    <!--<li><a [routerLink]="['/sobre-mi']" [routerLinkActive]="['actived']">Sobre mi</a></li>-->
-    <li class="liNav" id="inicio"><a class="linkNav" href="#">Main</a></li>
-    <li class="liNav" (click)="drawer.toggle()"><a class="linkNav" [routerLink]="['/proyectos']" [routerLinkActive]="['actived']" >Games</a></li>
-    <li class="liNav" (click)="drawer.toggle()" *ngIf="TOKEN_STRING && role=='admin'"><a class="linkNav" [routerLink]="['/crear-proyecto']" [routerLinkActive]="['actived']">Add Game</a></li>
-    <li class="liNav" (click)="drawer.toggle()"><a class="linkNav" [routerLink]="['/gallery']" [routerLinkActive]="['actived']">Gallery</a></li>
-    <li class="liNav" (click)="drawer.toggle()"><a class="linkNav" [routerLink]="['/contacto']" [routerLinkActive]="['actived']">Contact</a></li>
-    <li class="liNav" (click)="drawer.toggle()" *ngIf="!TOKEN_STRING"><a class="linkNav" [routerLink]="['/login']" [routerLinkActive]="['actived']">Log In</a></li>
-    <li class="liNav" (click)="drawer.toggle()" *ngIf="!TOKEN_STRING"><a class="linkNav" [routerLink]="['/register']" [routerLinkActive]="['actived']">Sign up</a></li>
-    <li class="liNav" (click)="drawer.toggle()" *ngIf="TOKEN_STRING"><a class="linkNav" (click)="logout()">Log Out</a></li>
-  </ul>
-    
-
-<!--      <a mat-list-item href="#">Link 1</a>
-      <a mat-list-item href="#">Link 2</a>
-      <a mat-list-item href="#">Link 3</a>
--->      
+      <ul class="ulNav">
+        <li class="liNav" id="inicio"><a class="linkNav" href="#">Main</a></li>
+        <li class="liNav" (click)="drawer.toggle()"><a class="linkNav" [routerLink]="['/proyectos']" [routerLinkActive]="['actived']" >Games</a></li>
+        <li class="liNav" (click)="drawer.toggle()" *ngIf="TOKEN_STRING && role=='admin'"><a class="linkNav" [routerLink]="['/crear-proyecto']" [routerLinkActive]="['actived']">Add Game</a></li>
+        <li class="liNav" (click)="drawer.toggle()"><a class="linkNav" [routerLink]="['/gallery']" [routerLinkActive]="['actived']">Gallery</a></li>
+        <li class="liNav" (click)="drawer.toggle()"><a class="linkNav" [routerLink]="['/contacto']" [routerLinkActive]="['actived']">Contact</a></li>
+        <li class="liNav" (click)="drawer.toggle()" *ngIf="!TOKEN_STRING"><a class="linkNav" [routerLink]="['/login']" [routerLinkActive]="['actived']">Log In</a></li>
+        <li class="liNav" (click)="drawer.toggle()" *ngIf="!TOKEN_STRING"><a class="linkNav" [routerLink]="['/register']" [routerLinkActive]="['actived']">Sign up</a></li>
+        <li class="liNav" (click)="drawer.toggle()" *ngIf="TOKEN_STRING"><a class="linkNav" (click)="logout()">Log Out</a></li>
+      </ul>
     </mat-nav-list>
   </mat-sidenav>
+
   <mat-sidenav-content >
-    <mat-toolbar color="primary" >
+    <mat-toolbar color="primary">
       <button
         id="buttonNav"
         type="button"
@@ -47,10 +40,8 @@
         *ngIf="isHandset$ | async">
         <mat-icon aria-label="Side nav toggle icon">menu</mat-icon>
       </button>
-      <!--<span>Top Racing Games</span>-->
 
       <ul class="ulToolbar">
-        <!--<li><a [routerLink]="['/sobre-mi']" [routerLinkActive]="['actived']">Sobre mi</a></li>-->
         <li class="liToolbar" id="inicio"><a class="linkToolbar" href="#">Main</a></li>
         <li class="liToolbar"><a class="linkToolbar" [routerLink]="['/proyectos']" [routerLinkActive]="['actived']">Games</a></li>
         <li class="liToolbar" *ngIf="TOKEN_STRING && role=='admin'"><a class="linkToolbar" [routerLink]="['/crear-proyecto']" [routerLinkActive]="['actived']">Add Game</a></li>
@@ -61,11 +52,6 @@
         <li class="liToolbar" *ngIf="TOKEN_STRING"><a class="linkToolbar" (click)="logout()">Log Out</a></li>
       </ul>
     </mat-toolbar>
-
-
     <ng-content></ng-content>
-
-    
-    <!-- Add Content Here -->
   </mat-sidenav-content>
 </mat-sidenav-container>

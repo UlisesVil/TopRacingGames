@@ -15,32 +15,24 @@
 
         <h1>Login</h1>
 
-        <!--<label for="email">E-mail</label>-->
         <input class="inputForm" type="email" name="email" #email="ngModel" [(ngModel)]="register.email" placeholder="Email" required/>
         <span class="form_error" *ngIf="email.touched && !email.valid">
             <strong>*El E-mail es Obligatorio</strong>
         </span>
           
-        
         <input class="inputForm" type="hidden" name="role" #name="ngModel" [(ngModel)]="register.role" placeholder="role"/>
         
-        <!--<label for="password">Password</label>-->
         <input class="inputForm" type="password" name="password" #password="ngModel" [(ngModel)]="register.password" placeholder="Password" required/>
         <span class="form_error" *ngIf="password.touched && !password.valid">
             <strong>*El Password es Obligatorio</strong>
         </span>
 
-        <!--<label for="confirmPassword">Confirmar Password</label>-->
         <input class="inputForm" type="password" name="confirmPassword" #confirmPassword="ngModel" [(ngModel)]="register.confirmPassword" placeholder="confirmPassword" required/>
         <span class="form_error" *ngIf="confirmPassword.touched && !confirmPassword.valid">
             <strong>*Debes Confirmar tu Password</strong>
         </span>
 
-
         <input id="sendButton" type="submit" value="3... 2... 1... Go!!!" [disabled]="!loginForm.form.valid || password.value !== confirmPassword.value"/>
     </form>
-
-
-
 
 </div>

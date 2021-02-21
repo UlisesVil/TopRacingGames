@@ -1,8 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { Register } from '../../models/register';
 import { LoginService } from '../../services/login.service';
-import { Global } from '../../services/global';
-import { ActivatedRoute, Router } from '@angular/router';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-login',
@@ -29,45 +28,33 @@ export class LoginComponent implements OnInit {
   ngOnInit(): void {
   }
 
-
   onSubmit(form){
      
-      this.email= this.register.email;
+    this.email= this.register.email;
 
-      this._loginService.getLogin(this.register).subscribe(
-        response=>{
+    this._loginService.getLogin(this.register).subscribe(
+      response=>{
+        if(response.token){
+          this.register.name=response.payload.name;
+          this.status = 'success';
+          this.username = response.payload.name;
+          this.myname= response.payload.role;
+          localStorage.setItem('payload',JSON.stringify(response.payload));
+          localStorage.setItem('token',response.token);
           
-          //console.log(response.payload);
-          if(response.token){
-            this.register.name=response.payload.name;
-            this.status = 'success';
-            this.username = response.payload.name;
-            this.myname= response.payload.role;
-            console.log(response);
-            console.log(response.payload);
-            console.log(this.status);
-            console.log(this.username );
-            console.log(this.myname);
-            localStorage.setItem('payload',JSON.stringify(response.payload));
-            localStorage.setItem('token',response.token);
-            
-            
-            this._router.navigate(['/proyectos'])
+          this._router.navigate(['/proyectos'])
             .then(() => {
               window.location.reload();
             });
-            
-            form.reset();
-          }else{
-            this.status= 'failed';
-          }
-          
-        },
-        error=>{
-          console.log(<any>error);
-        }
-      );
-    
+          form.reset();
+        }else{
+          this.status= 'failed';
+        } 
+      },
+      error=>{
+        console.log(<any>error);
+      }
+    );    
   }
 
 }

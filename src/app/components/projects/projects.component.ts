@@ -9,42 +9,33 @@ import { Global } from '../../services/global';
   styleUrls: ['./projects.component.css'],
   providers: [ProjectService]
 })
+
 export class ProjectsComponent implements OnInit {
 
   public projects: Project[];
   public url: string;
   public status: string;
   
-
   constructor(
     private _projectService: ProjectService
-
-  ) {
-      this.url = Global.url;
-    }
+    ) {
+    this.url = Global.url;
+  }
 
   ngOnInit(){
-    
     this.getProjects();
-    
   }
 
   getProjects(){
-    
     this._projectService.getProjects().subscribe(
       response => {
         if(response.projects){
-          
           this.projects = response.projects;
           this.status= 'failed';
-          console.log(this.projects);
-          
         }
-        
       },
       error => {
         console.log(<any>error);
-        
       }
     );
   }

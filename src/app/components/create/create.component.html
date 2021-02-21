@@ -1,13 +1,8 @@
 <div class="create" *ngIf="project && TOKEN_STRING && role=='admin'" >
 
-    <div class="detailcont" >
+    <div class="detailcont">
         <h2>{{title}}</h2>
-
-<!--
-        <div class="message success" *ngIf="status=='success'">
-            El proyecto se ha creado Correctamente, puedes <a [routerLink]="['/proyecto', save_project._id]">verlo aqui</a>
-        </div>
-    -->      
+     
         <div class="message failed" *ngIf="status=='failed'">
             El ARTICULO NO SE HA PODIDO CREAR
         </div>
@@ -15,15 +10,12 @@
 
         <form class="custom-form" #projectForm="ngForm" (ngSubmit)="onSubmit(projectForm)">
             <p>
-                <!--<label for="name">Nombre</label>-->
                 <input class="inputForm" type="text" name="name" #name="ngModel" [(ngModel)]="project.name" placeholder="Nombre" required/>
                 <span class="form_error" *ngIf="name.touched && !name.valid">
                     <strong>*El Nombre es Obligatorio</strong>
                 </span>
-        
             </p>
             <p>
-                <!--<label for="description">Descripcion</label>-->
                 <textarea class="inputForm" name="description" #description="ngModel" [(ngModel)]="project.description" placeholder="Descripcion" required>
                 </textarea>
                 <span class="form_error" *ngIf="description.touched && !description.valid">
@@ -31,56 +23,43 @@
                 </span>
             </p>
             <p>
-                <!--<label for="category">Categoria</label>-->
                 <input class="inputForm" type="text" name="category" #category="ngModel" [(ngModel)]="project.category" placeholder="Tipo de Vehiculos" required/>
                 <span class="form_error" *ngIf="category.touched && !category.valid">
-                    <strong>*La Categoria es Obligatoria</strong>
+                    <strong>*El tipo de Vehiculo es Obligatorio</strong>
                 </span>
             </p>
             <p>
-                <!--<label class="labelyear" for="year">Año de lanzamiento:</label>-->
                 <input class="inputForm year" type="number" name="year" #year="ngModel" [(ngModel)]="project.year" placeholder="Año de lanzamiento:"/>
             </p>
             <p>
-                <!--<label for="langs">Lenguajes utilizados</label>-->
                 <input class="inputForm" type="text" name="langs" #langs="ngModel" [(ngModel)]="project.langs" placeholder="Disponible en:" required/>
                 <span class="form_error" *ngIf="langs.touched && !langs.valid">
-                    <strong>*Los Lenguajes son Obligatorios</strong>
+                    <strong>*Los dispositivos son Obligatorios</strong>
                 </span>
             </p>
-            <p>
-                                
-
+            <div>
                 <p id="actual"></p>
                 <span class="actualimagecont" *ngIf="project.image" style="float:none;">
                     <img class="actualimage" src="{{url+'get-image/'+project.image}}"/>
                 </span>
-                
-                <!--<input type="file" name="image" placeholder="Subir Imagen" (change)="fileChangeEvent($event)"/>
-            </p>-->
+            </div>
 
-            <p id="last"></p>  
-<div id="preview">
-   
-</div>
+            <p id="last"></p> 
 
-<span class="image">
-<input type="file" name="image" id="image" class="fileup" (change)="fileChangeEvent($event)"/>
-</span>
+            <div id="preview"></div>
 
-<label for="image">
-<div class="indicador"><span>Subir Imagen</span></div>
-</label> 
+            <span class="image">
+                <input type="file" name="image" id="image" class="fileup" (change)="fileChangeEvent($event)"/>
+            </span>
 
-        <span class="editbuttons">
+            <label for="image">
+                <div class="indicador"><span>Subir Imagen</span></div>
+            </label> 
 
-            <div *ngIf="project._id" [routerLink]="['/proyecto', project._id]" class="button-cancel">Cancelar</div>
-            <input class="sendButton" type="submit" value="Enviar" [disabled]="!projectForm.form.valid"/>
-        </span>
+            <span class="editbuttons">
+                <div *ngIf="project._id" [routerLink]="['/proyecto', project._id]" class="button-cancel">Cancelar</div>
+                <input class="sendButton" type="submit" value="Enviar" [disabled]="!projectForm.form.valid"/>
+            </span>
         </form>
     </div>
-
-
-
-
 </div>

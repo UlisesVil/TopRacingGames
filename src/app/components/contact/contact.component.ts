@@ -1,4 +1,3 @@
-
 import { Component, OnInit, ViewChild } from '@angular/core';
 
 
@@ -7,24 +6,12 @@ import { Component, OnInit, ViewChild } from '@angular/core';
   templateUrl: './contact.component.html',
   styleUrls: ['./contact.component.css']
 })
+
 export class ContactComponent implements OnInit {
 
- 
-
-  constructor() { 
-   
+  constructor() {  
   }
 
-
-
-  ngOnInit() {
-    
-    
+  ngOnInit() {  
   }
-
-  
-
-  
-  
-
 }

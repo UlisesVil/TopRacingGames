@@ -1,34 +1,7 @@
-<!--Imputs y Outputs-->
-<!--En este caso Contact es el componente "Padre" de Slider "Hijo"-->
 <div class="container">
-    <h2>Gallery</h2>
-
-    <slider [anchura]="anchuraToSlider"
-        [etiquetas]="captions"
-        (conseguirAutor)="getAutor($event)"
-    ></slider>
-
-    <!--        Tamaño del Slider:
-        
-        <button (click)="cargarSlider()">Cargar Slider</button>
-        <button (click)="resetearSlider()">Reset Slider</button>
-
-
-        
-
-        <div *ngIf="anchuraToSlider">
-        
-            <slider [anchura]="anchuraToSlider"
-                    [etiquetas]="captions"
-                    (conseguirAutor)="getAutor($event)"
-            ></slider>                  
-            {{autor.nombre}}<br/>
-            {{autor.website}}<br/>
-            {{autor.twitter}}
-        </div>
     
-    -->
-
- 
+    <h2>Gallery</h2>
+    <slider [etiquetas]="captions">
+    </slider>
 
 </div>

@@ -3,6 +3,7 @@ import { Global } from './global';
 
 @Injectable()
 export class UploadService{
+    
     public url: string;
 
     constuctor(){

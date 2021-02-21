@@ -12,8 +12,8 @@ declare var $:any;
   styleUrls: ['./edit.component.css'],
   providers: [ProjectService, UploadService]
 })
-export class EditComponent implements OnInit {
 
+export class EditComponent implements OnInit {
   public title: string;
   public project: Project;
   public save_project;
@@ -23,29 +23,25 @@ export class EditComponent implements OnInit {
   public TOKEN_STRING: string;
   public role: string;
 
-
   constructor(
     private _projectService: ProjectService,
     private _uploadService: UploadService,
     private _route: ActivatedRoute,
     private _router: Router
-  ) {
+    ) {
     this.title = "Editar Articulo";
     this.url = Global.url;
-   }
+  }
 
-   ngOnInit() {
+  ngOnInit() {
     this._route.params.subscribe(params=>{
       let id = params.id;
-
       this.getProject(id);
     });
 
     let payload= JSON.parse(localStorage.getItem("payload"));
     if(payload){
       this.role=payload["role"];
-      console.log(payload);
-      console.log(this.role);
       this.TOKEN_STRING = localStorage.getItem("token");
     }
   }
@@ -65,8 +61,6 @@ export class EditComponent implements OnInit {
     this._projectService.updateProject(this.project).subscribe(
       response=>{
         if(response.project){
-            
-            //Subir la imagen
           if(this.filesToUpload){
           this._uploadService.makeFileRequest(Global.url+"upload-image/"+response.project._id, [], this.filesToUpload, 'image')
             .then((result:any)=>{
@@ -91,19 +85,12 @@ export class EditComponent implements OnInit {
     );
   }
 
-  
   fileChangeEvent(fileInput: any){
-
     this.filesToUpload= <Array<File>>fileInput.target.files;
-    
-   
-    if (this.filesToUpload && this.filesToUpload[0]) { 
-      console.log(this.filesToUpload);
+    if (this.filesToUpload && this.filesToUpload[0]){
       var reader = new FileReader(); 
-      reader.readAsDataURL(this.filesToUpload[0]); 
-      console.log(reader);
-
-      reader.onload = function (e) { 
+      reader.readAsDataURL(this.filesToUpload[0]);
+      reader.onload = function(e){ 
         $('#preview + img').remove(); 
         $('#preview').after('<img src="'+e.target.result+'" width="100%" />');
         var URLactual = window.location.href;
@@ -113,13 +100,8 @@ export class EditComponent implements OnInit {
           $("#actual").attr('style',"padding:5px 10px");
           $("#last").attr('style',"padding:5px 10px");
         } 
-        
       } 
     } 
-
   }
-
-
-
-
+  
 }
