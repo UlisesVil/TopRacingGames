@@ -36,11 +36,14 @@
   background: #ebf5fc;
   color: black;
   font-size: 20px;
+  font-family: FugazOne;
 }
 
 .titleform{
   display: flex;
   justify-content: center;
+  font-family: FugazOne;
+  font-size: 20px;
 }
 
 #sendButton{
@@ -60,6 +63,7 @@
   margin: 0px auto;
   cursor: pointer;
   outline: none;
+  font-family: FugazOne;
 }
 
 #sendButton:hover{
@@ -86,9 +90,7 @@
   letter-spacing: 0.15em;
   font-size: 0.975rem;
   background-color: #00000093;
-}
-
-.button-cancel{
+  font-family: FugazOne;
   background-color: #e7741693;
   border: 1px solid rgb(255, 145, 0);
   border-left: 8px solid rgb(255, 145, 0);
@@ -126,5 +128,9 @@
   .button-cancel{
     margin: 0px auto;
   }
+}
+
+.noComment{
+  margin-top: 50px;
 }
 

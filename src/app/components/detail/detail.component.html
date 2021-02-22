@@ -8,8 +8,8 @@
 
             <div class="data">
 
-                <p>Tipo de Vehiculos: {{project.category}}</p>
-                <p>Disponible en: {{project.langs}}</p>
+                <h2>Tipo de Vehiculos: {{project.category}}</h2>
+                <h2>Disponible en: {{project.langs}}</h2>
                 <br>
                 <p class="description">{{project.description}}</p>
                 
@@ -50,7 +50,7 @@
                         <textarea id="commentArea" class="inputForm" name="comment" #comment="ngModel" [(ngModel)]="comment.comment" placeholder="Comentario" [disabled]="!userloged" required>
                         </textarea>
                     </div>
-                    <span class="form_error" *ngIf="comment.touched && !comment.valid">
+                    <span class="noComment" *ngIf="comment.touched && !comment.valid">
                         <strong>*Escribe algo para guardar tu comentario</strong>
                     </span>
                 </div>

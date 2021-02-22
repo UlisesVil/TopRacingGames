@@ -133,7 +133,6 @@ export class DetailComponent implements OnInit {
     this._commentService.deleteComment(id).subscribe(
       response=>{
         if(response){
-          console.log(response);
           window.location.reload();
         }
       },
@@ -153,7 +152,7 @@ export class DetailComponent implements OnInit {
 
     dialogRef.afterClosed().subscribe(res => {
       if(res){
-        console.log('Edit Comment');
+        console.log('openDialog');
       }
     });
   }
@@ -167,19 +166,16 @@ export class DetailComponent implements OnInit {
     if(atribute=='true'||atributeDisabled=='disabled'){
       const dialogRef = this.dialog.open(DialogCommentDisabledComponent,{
         data: {
-          message:'You Must be Loged in to publish a comment!!!!',
+          message:'You Must be Logged in to post a comment!!!!',
           projectId: projectId
         }
       });
 
       dialogRef.afterClosed().subscribe(res=>{
-        console.log(res);
         if(res){
-          console.log('esta es la res'); 
+          console.log('commentDisabled'); 
         }
       });
-    }else{
-      console.log(atribute);
     }
   }
 

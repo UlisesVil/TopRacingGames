@@ -11,6 +11,12 @@
 h1, h2{
   text-align: center;
   margin: 30px 0px;
+  font-family: russoOne;
+  font-size: 25px;
+}
+
+h2{
+  margin: 10px;
 }
 
 .gamescont,.commentscont{
@@ -38,6 +44,9 @@ h1, h2{
 .description{
   width: 100%;
   text-align: justify;
+  font-family: FugazOne;
+  font-size: 20px;
+  line-height: 25px;
 }
 
 .button-edit,
@@ -62,12 +71,14 @@ h1, h2{
   background-color: #e7741693;
   border: 1px solid rgb(255, 145, 0);
   border-left: 8px solid rgb(255, 145, 0);
+  font-family: FugazOne;
 }
 
 .button-delete{
   background-color: #99040493;
   border: 1px solid red;
   border-left: 8px solid red;
+  font-family: FugazOne;
 }
 
 .editbuttons{
@@ -121,15 +132,16 @@ h1, h2{
   border-left: 8px solid red;
   border-bottom-left-radius: 10px;
   border-top-right-radius: 10px;
-  margin: 90px auto 0px;
+  margin: 50px auto 0px;
   padding: 0.575rem 1rem;
-  font-size: 0.875rem;
+  font-size: 0.975rem;
   letter-spacing: 0.15em;
   color: #bb0404;
   font-weight: bold;
   background-color: #00000093;
   cursor: pointer;
   outline: none;
+  font-family: FugazOne;
 }
 
 #sendButton:hover{
@@ -146,6 +158,7 @@ h3{
   font-size: 20px;
   margin-bottom: 7px;
   margin-top: 10px;
+  font-family: FugazOne;
 }
 
 .date{
@@ -165,6 +178,9 @@ h3{
   padding: 10px 10px;
   border-bottom: 1px solid red;
   box-sizing: border-box;
+  font-family: FugazOne;
+  font-size: 20px;
+  line-height: 25px;
 }
 
 .textcomment{
@@ -184,11 +200,15 @@ h3{
 #commentArea{
   position: absolute;
   z-index:-1;
+  font-family: FugazOne;
+  font-size: 20px;
+  line-height: 25px;
 }
 
 #hidde,#hidde2{
   position: relative;
   width: 100%;
+  height: fit-content;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -196,7 +216,17 @@ h3{
   padding:0px;
   z-index:3;
   top:14px;
+  margin-bottom: 70px;
 }
+
+.noComment{
+  margin-top: 0px;
+  margin-left: 20px;
+  display: block;
+  font-family: FugazOne;
+  font-size: 20px;
+}
+
 
 @media screen and (max-width: 800px){
   .imagedetail{
@@ -227,8 +257,3 @@ h3{
     margin: 5px auto;
   }
 }
-
-
-
-
-

@@ -7,30 +7,8 @@
     src: url(../fonts/russoOne.ttf) format('truetype');
 }
 @font-face{
-    font-family: faster;
-    src: url(../fonts/FasterOne.ttf) format('truetype');
-}
-
-@font-face{
-    font-family: Audiowide;
-    src: url(../fonts/Audiowide.ttf) format('truetype');
-}
-@font-face{
-    font-family: BungeeInline;
-    src: url(../fonts/BungeeInline.ttf) format('truetype');
-}
-@font-face{
-    font-family: BungeeShade;
-    src: url(../fonts/BungeeShade.ttf) format('truetype');
-}
-
-@font-face{
     font-family: FrederickatheGreat;
     src: url(../fonts/FrederickatheGreat.ttf) format('truetype');
-}
-@font-face{
-    font-family: Frijole;
-    src: url(../fonts/Frijole.ttf) format('truetype');
 }
 @font-face{
     font-family: FugazOne;
@@ -41,14 +19,7 @@
     font-family: SigmarOne;
     src: url(../fonts/SigmarOne.ttf) format('truetype');
 }
-@font-face{
-    font-family: Slackey;
-    src: url(../fonts/Slackey.ttf) format('truetype');
-}
-@font-face{
-    font-family: TitanOne;
-    src: url(../fonts/TitanOne.ttf) format('truetype');
-}
+
 
 
 *{
@@ -106,6 +77,11 @@ header{
     z-index: 4;
 }
 
+/*Nav-bar*/
+.mat-drawer-backdrop, .mat-drawer-shown{
+    background-color: transparent !important;
+}
+
 #content{
     width: 100%;
     min-height: 78vh;
@@ -122,25 +98,6 @@ footer{
     margin: 0px auto;
     padding-top: 15px;
     color: rgb(250, 245, 245);
-}
-
-.about{
-    width: 70%;
-    margin: 0px auto;
-    margin-bottom: 20px;
-    font-size: 23px;
-}
-
-.about h2{
-    border-bottom: 1px solid #ccc;
-    padding-bottom: 5px;
-    margin-bottom: 5px;
-}
-
-.about p{
-    padding-top: 20px;
-    padding-bottom: 30px;
-    text-align: justify;
 }
 
 form input[type="text"],
@@ -223,3 +180,5 @@ form input[disabled]{
     border: 5px solid red !important;
     border-radius: 10px !important;
   }
+
+

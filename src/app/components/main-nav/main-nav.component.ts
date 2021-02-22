@@ -34,14 +34,8 @@ export class MainNavComponent {
     let payload= JSON.parse(localStorage.getItem("payload"));
     if(payload){
       this.role=payload["role"];
-      console.log(payload);
-      console.log(this.role);
       this.TOKEN_STRING = localStorage.getItem("token");
     }
-
-    $(".mat-drawer-backdrop").click(function(){
-      console.log("Me llega el click");
-    });
     
   }
 
@@ -55,8 +49,10 @@ export class MainNavComponent {
   } 
 
   transparentwallOff(){
-    $('#transparentWall').attr('style','background:red; width: 100%; height: 100vh; ');
-    $('mat-toolbar').attr('style','background:red;');
+    $('#transparentWall').attr('style','background:black; width: 100%; height: 100vh; ');
+    $('mat-toolbar').attr('style','background:black;');
+    $('#pngmenu').attr('src','../assets/img/car2.png');
+    $('#pngmenu').attr('style','width: 100%; margin-top: 150px;');
   }
 
 }

@@ -19,7 +19,7 @@
         <strong>*El Password es Obligatorio</strong>
     </span>
 
-    <input class="inputForm" type="password" name="confirmPassword" #confirmPassword="ngModel" [(ngModel)]="register.confirmPassword" placeholder="confirmPassword" required/>
+    <input class="inputForm" type="password" name="confirmPassword" #confirmPassword="ngModel" [(ngModel)]="register.confirmPassword" placeholder="Confirm Password" required/>
     <span class="form_error" *ngIf="confirmPassword.touched && !confirmPassword.valid">
         <strong>*Debes Confirmar tu Password</strong>
     </span>

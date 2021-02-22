@@ -4,11 +4,14 @@
   justify-content: center;
   text-align: center;
   font-size: 16px;
+  font-family: FugazOne;
   border: none;
 }
 
 h1{
   margin-bottom: 0px;
+  font-family: bangers;
+  letter-spacing: 2px;
 }
 
 .inputForm{
@@ -20,6 +23,8 @@ h1{
   border: none;
   background: #ebf5fc;
   color: black;
+  font-family: bangers;
+  letter-spacing: 2px;
 }
   
 #sendButtonform{
@@ -40,6 +45,7 @@ h1{
   background-color: #00000093;
   cursor: pointer;
   outline: none;
+  font-family: FugazOne;
 }
 
 #sendButtonform:hover{
@@ -66,6 +72,7 @@ h1{
   text-decoration: none;
   letter-spacing: 0.15em;
   background-color: #00000093;
+  font-family: FugazOne;
 }
 
 .button-cancel{

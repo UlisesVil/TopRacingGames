@@ -41,6 +41,8 @@
   padding-right: 20px;
   padding-left: 20px;
   font-size: 15px;
+  font-family: bangers;
+  letter-spacing: 2px;
   text-decoration: none;
   color: white;
   transition: all 800ms;
@@ -49,7 +51,7 @@
 
 .linkNav:hover,
 .actived{      
-  background: rgba(0,0,0,0.8);
+  background: rgba(70, 0, 0, 0.8);
   border-radius: 30px;
 }
 
@@ -66,6 +68,8 @@
   margin: 0px auto;
   text-align: center;
   line-height: 50px;
+  font-family: bangers;
+  letter-spacing: 2px;
 }
 
 .linkToolbar{
@@ -74,7 +78,7 @@
   padding-right: 20px;
   padding-left: 20px;
   text-decoration: none;
-  font-size: 15px;
+  font-size: 20px;
   color: white;
   transition: all 800ms;
   cursor: pointer;
@@ -82,7 +86,7 @@
 
 .linkToolbar:hover,
 .actived{      
-  background: rgba(0,0,0,0.8);
+  background: rgba(70, 0, 0, 0.8);
   border-radius: 30px;
 }
 

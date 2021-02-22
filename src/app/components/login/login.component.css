@@ -1,3 +1,8 @@
+h1{
+  font-family: bangers;
+  letter-spacing: 2px;
+}
+
 #login{
   display: flex;
   flex-direction: column;
@@ -29,6 +34,8 @@
   border: none;
   background: #ebf5fc;
   color: black;
+  font-family: bangers;
+  letter-spacing: 2px;
 }
 
 #sendButton{

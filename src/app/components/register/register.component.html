@@ -34,7 +34,7 @@
             *El Password es Obligatorio
         </span>
 
-        <input class="inputForm" type="password" name="confirmPassword" #confirmPassword="ngModel" [(ngModel)]="register.confirmPassword" placeholder="Confirmar Password" required/>
+        <input class="inputForm" type="password" name="confirmPassword" #confirmPassword="ngModel" [(ngModel)]="register.confirmPassword" placeholder="Confirm Password" required/>
         <span class="form_error" *ngIf="confirmPassword.touched && !confirmPassword.valid">
             *Debes Confirmar tu Password
         </span>
