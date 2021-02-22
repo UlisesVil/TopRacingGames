@@ -51,8 +51,8 @@ export class MainNavComponent {
   transparentwallOff(){
     $('#transparentWall').attr('style','background:black; width: 100%; height: 100vh; ');
     $('mat-toolbar').attr('style','background:black;');
-    $('#pngmenu').attr('src','../assets/img/car2.png');
-    $('#pngmenu').attr('style','width: 100%; margin-top: 150px;');
+    /*$('#pngmenu').attr('src','../../../../assets/img/car2.png');*//*../assets/img/car2.png*/ 
+    $('#pngmenu').attr('style','width: 100%; margin-top: 150px; display: inline;');
   }
 
 }
