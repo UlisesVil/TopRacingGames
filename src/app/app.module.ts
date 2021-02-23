@@ -12,7 +12,6 @@ import { LoginComponent } from './components/login/login.component';
 import { RegisterComponent } from './components/register/register.component';
 import { ProjectsComponent } from './components/projects/projects.component';
 import { CreateComponent } from './components/create/create.component';
-import { ContactComponent } from './components/contact/contact.component';
 import { ErrorComponent } from './components/error/error.component';
 import { DetailComponent } from './components/detail/detail.component';
 import { EditComponent } from './components/edit/edit.component';
@@ -32,7 +31,6 @@ import { DialogCommentDisabledComponent } from './components/dialog-comment-disa
     AppComponent,
     ProjectsComponent,
     CreateComponent,
-    ContactComponent,
     ErrorComponent,
     DetailComponent,
     EditComponent,

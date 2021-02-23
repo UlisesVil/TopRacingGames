@@ -21,7 +21,6 @@
         <li class="liNav" (click)="drawer.toggle()"><a class="linkNav" [routerLink]="['/proyectos']" [routerLinkActive]="['actived']" >Games</a></li>
         <li class="liNav" (click)="drawer.toggle()" *ngIf="TOKEN_STRING && role=='admin'"><a class="linkNav" [routerLink]="['/crear-proyecto']" [routerLinkActive]="['actived']">Add Game</a></li>
         <li class="liNav" (click)="drawer.toggle()"><a class="linkNav" [routerLink]="['/gallery']" [routerLinkActive]="['actived']">Gallery</a></li>
-        <li class="liNav" (click)="drawer.toggle()"><a class="linkNav" [routerLink]="['/contacto']" [routerLinkActive]="['actived']">Contact</a></li>
         <li class="liNav" (click)="drawer.toggle()" *ngIf="!TOKEN_STRING"><a class="linkNav" [routerLink]="['/login']" [routerLinkActive]="['actived']">Log In</a></li>
         <li class="liNav" (click)="drawer.toggle()" *ngIf="!TOKEN_STRING"><a class="linkNav" [routerLink]="['/register']" [routerLinkActive]="['actived']">Sign up</a></li>
         <li class="liNav" (click)="drawer.toggle()" *ngIf="TOKEN_STRING"><a class="linkNav" (click)="logout()">Log Out</a></li>
@@ -46,7 +45,6 @@
         <li class="liToolbar"><a class="linkToolbar" [routerLink]="['/proyectos']" [routerLinkActive]="['actived']">Games</a></li>
         <li class="liToolbar" *ngIf="TOKEN_STRING && role=='admin'"><a class="linkToolbar" [routerLink]="['/crear-proyecto']" [routerLinkActive]="['actived']">Add Game</a></li>
         <li class="liToolbar"><a class="linkToolbar" [routerLink]="['/gallery']" [routerLinkActive]="['actived']">Gallery</a></li>
-        <li class="liToolbar"><a class="linkToolbar" [routerLink]="['/contacto']" [routerLinkActive]="['actived']">Contact</a></li>
         <li class="liToolbar" *ngIf="!TOKEN_STRING"><a class="linkToolbar" [routerLink]="['/login']" [routerLinkActive]="['actived']">Log In</a></li>
         <li class="liToolbar" *ngIf="!TOKEN_STRING"><a class="linkToolbar" [routerLink]="['/register']" [routerLinkActive]="['actived']">Sign up</a></li>
         <li class="liToolbar" *ngIf="TOKEN_STRING"><a class="linkToolbar" (click)="logout()">Log Out</a></li>
