@@ -6,21 +6,18 @@ $(document).ready(function() {
     $(".mat-drawer-backdrop").click(function(){
         $('#transparentWall').removeAttr('style','background:black; width: 100%; height: 100vh; ');
         $('mat-toolbar').removeAttr('style','background:black;');
-        /*$('#pngmenu').removeAttr('src','../assets/img/car3.png');*/
         $('#pngmenu').removeAttr('style','width: 100%; margin-top: 150px; display: inline;');
         $('#pngmenu').attr('style','display: none;');
     });
     $(".linkNav").click(function(){
         $('#transparentWall').removeAttr('style','background:black; width: 100%; height: 100vh; ');
         $('mat-toolbar').removeAttr('style','background:black; display:none');
-        /*$('#pngmenu').removeAttr('src','../assets/img/car3.png');*/
         $('#pngmenu').removeAttr('style','width: 100%; margin-top: 150px; display: inline;');  
         $('#pngmenu').attr('style','display: none;');
     });
     $("#buttonNav2").click(function(){
         $('#transparentWall').removeAttr('style','background:black; width: 100%; height: 100vh; ');
         $('mat-toolbar').removeAttr('style','background:black; display:none');
-        /*$('#pngmenu').removeAttr('src','../assets/img/car3.png');*/
         $('#pngmenu').removeAttr('style','width: 100%; margin-top: 150px; display: inline;');
         $('#pngmenu').attr('style','display: none;');
     });
