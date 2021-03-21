@@ -1,46 +1,46 @@
 <div class="register" *ngIf="register">
 
     <div class="message success" *ngIf="status=='success'">
-        El Registro se ha creado Correctamente.
+        The User has been successfully created.
     </div>
     
     <div class="message failed" *ngIf="status=='failed'">
-        El Registro NO SE HA PODIDO CREAR
+       User Cannot be created 
     </div>
 
     <form class="custom-form" #registerForm="ngForm" (ngSubmit)="onSubmit(registerForm)">
 
-        <h1>Registro</h1>
+        <h1>Register</h1>
 
-        <input class="inputForm" type="text" name="name" #name="ngModel" [(ngModel)]="register.name" placeholder="Nombre" required/>
+        <input class="inputForm" type="text" name="name" #name="ngModel" [(ngModel)]="register.name" placeholder="Name" required/>
         <span class="form_error" *ngIf="name.touched && !name.valid">
-            *El Nombre es Obligatorio
+            *Name is required
         </span>
 
-        <input class="inputForm" type="text" name="lastName" #lastName="ngModel" [(ngModel)]="register.lastName" placeholder="Apellido" required/>
+        <input class="inputForm" type="text" name="lastName" #lastName="ngModel" [(ngModel)]="register.lastName" placeholder="Last Name" required/>
         <span class="form_error" *ngIf="lastName.touched && !lastName.valid">
-            *El Apellido es Obligatorio
+            *Last Name is required
         </span>
 
         <input class="inputForm" type="email" name="email" #email="ngModel" [(ngModel)]="register.email" placeholder="Email" required/>
         <span class="form_error" *ngIf="email.touched && !email.valid">
-            *El E-mail es Obligatorio
+            *E-mail is required
         </span>
           
         <input class="inputForm" type="hidden" name="role" #name="ngModel" [(ngModel)]="register.role" placeholder="role"/>
         
         <input class="inputForm" type="password" name="password" #password="ngModel" [(ngModel)]="register.password" placeholder="Password" required/>
         <span class="form_error" *ngIf="password.touched && !password.valid">
-            *El Password es Obligatorio
+            *Password is required
         </span>
 
         <input class="inputForm" type="password" name="confirmPassword" #confirmPassword="ngModel" [(ngModel)]="register.confirmPassword" placeholder="Confirm Password" required/>
         <span class="form_error" *ngIf="confirmPassword.touched && !confirmPassword.valid">
-            *Debes Confirmar tu Password
+            *You must confirm your password
         </span>
 
         <span class="form_error" *ngIf="password.value !== confirmPassword.value">
-            *La contraseña no es igual a la confirmada
+            *The password is not the same as the confirmed password
         </span>
 
         <input class="sendButton" type="submit" value="New Racer!!!" [disabled]="!registerForm.form.valid || password.value !== confirmPassword.value"/>

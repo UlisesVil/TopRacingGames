@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { Project } from '../../models/project';
 import { ProjectService } from '../../services/project.service';
 import { Global } from '../../services/global';
+declare var $:any;
 
 @Component({
   selector: 'app-projects',
@@ -39,5 +40,5 @@ export class ProjectsComponent implements OnInit {
       }
     );
   }
-  
+    
 }

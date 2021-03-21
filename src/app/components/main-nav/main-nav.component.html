@@ -41,7 +41,7 @@
       </button>
 
       <ul class="ulToolbar">
-        <li class="liToolbar" id="inicio"><a class="linkToolbar" href="#">Main</a></li>
+        <li class="liToolbar" id="inicio"><a class="linkToolbar" [routerLink]="['/main']" [routerLinkActive]="['actived']">Main</a></li>
         <li class="liToolbar"><a class="linkToolbar" [routerLink]="['/proyectos']" [routerLinkActive]="['actived']">Games</a></li>
         <li class="liToolbar" *ngIf="TOKEN_STRING && role=='admin'"><a class="linkToolbar" [routerLink]="['/crear-proyecto']" [routerLinkActive]="['actived']">Add Game</a></li>
         <li class="liToolbar"><a class="linkToolbar" [routerLink]="['/gallery']" [routerLinkActive]="['actived']">Gallery</a></li>

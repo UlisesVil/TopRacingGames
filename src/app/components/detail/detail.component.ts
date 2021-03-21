@@ -8,6 +8,7 @@ import { Router, ActivatedRoute, Params } from '@angular/router';
 import { MatDialog } from '@angular/material/dialog';
 import { CommentDialogComponent } from '../../components/comment-dialog/comment-dialog.component';
 import { DialogCommentDisabledComponent } from '../../components/dialog-comment-disabled/dialog-comment-disabled.component';
+import { localizedString } from '@angular/compiler/src/output/output_ast';
 declare var $:any;
 
 @Component({
@@ -31,6 +32,7 @@ export class DetailComponent implements OnInit {
   public comments: [];
   public commentInd: [];
   public confirmDeleteComment: string;
+  public text;
 
   constructor(
     private _projectService: ProjectService,
@@ -65,6 +67,9 @@ export class DetailComponent implements OnInit {
     this._projectService.getProject(id).subscribe(
       response => {
         this.project = response.project;
+        this.text = this.project.description.split('-');
+        console.log(this.text);
+        
       },
       error => {
         console.log(<any>error);

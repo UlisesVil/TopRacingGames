@@ -8,25 +8,27 @@
 
             <div class="data">
 
-                <h2>Tipo de Vehiculos: {{project.category}}</h2>
-                <h2>Disponible en: {{project.langs}}</h2>
+                <h2>Vehicles: {{project.category}}</h2>
+                <h2>Available for: {{project.langs}}</h2>
                 <br>
-                <p class="description">{{project.description}}</p>
+                <p class="description" *ngFor="let onetext of text">
+                    {{onetext}}
+                </p>
                 
                 <div *ngIf="TOKEN_STRING && role=='admin'">
                     <p *ngIf="confirm==false" >
                         <span class="editbuttons">
-                            <a [routerLink]="['/editar-proyecto', project._id]" class="button-edit">Editar</a>
-                            <a (click)="setConfirm(true)" class="button-delete">Borrar</a>
+                            <a [routerLink]="['/editar-proyecto', project._id]" class="button-edit">Edit</a>
+                            <a (click)="setConfirm(true)" class="button-delete">Delete</a>
                         </span>
                     </p>
                     <p *ngIf="confirm==true" >
                         <span class="confirm">
-                            ¿Estas seguro de ELIMINAR este Articulo?<br/>
+                            Are you sure to delete this Article?<br/>
                         </span>
                         <span class="editbuttons">
-                            <a (click)="setConfirm(false)" class="button-edit">Cancelar</a>
-                            <a (click)="deleteProject(project._id)" class="button-delete">Eliminar definitivamente</a>
+                            <a (click)="setConfirm(false)" class="button-edit">Cancel</a>
+                            <a (click)="deleteProject(project._id)" class="button-delete">Yes Delete</a>
                         </span>
                     </p>
                 </div>
@@ -35,23 +37,23 @@
 
 
         <div class="commentscont">
-            <h2>Comentarios</h2>
+            <h2>Comments</h2>
 
             <div class="message succes" *ngIf="staus=='succes'">
-                Gracias
+                Thanks
                 {{comment.userName}}
-                Hemos recibido tu Comentario Correctamente!!!
+                We have received your comment correctly!!!
             </div>
 
             <form class="custom-form" #commentForm="ngForm" (ngSubmit)="onSubmit(commentForm)">
-                <div class="titleform">Queremos saber tu Opinion</div>
+                <div class="titleform">We want to know your opinion</div>
                 <div>
                     <div id="hidde" (click)="commentDisabled(project._id)">
-                        <textarea id="commentArea" class="inputForm" name="comment" #comment="ngModel" [(ngModel)]="comment.comment" placeholder="Comentario" [disabled]="!userloged" required>
+                        <textarea id="commentArea" class="inputForm" name="comment" #comment="ngModel" [(ngModel)]="comment.comment" placeholder="Comment" [disabled]="!userloged" required>
                         </textarea>
                     </div>
                     <span class="noComment" *ngIf="comment.touched && !comment.valid">
-                        <strong>*Escribe algo para guardar tu comentario</strong>
+                        <strong>*Write something to save your comment</strong>
                     </span>
                 </div>
                 <input id="sendButton" type="submit" value="Enviar" [disabled]="!commentForm.form.valid"/>
@@ -65,17 +67,17 @@
                         <div *ngIf="comment.userName==userloged">
                             <p *ngIf="confirmDeleteComment=='cancel'" >
                                 <span class="commentbuttons">
-                                    <a (click)="openDialog(comment.comment, comment._id)" class="button-edit">Editar</a>
-                                    <a (click)="setConfirmEraseComment(comment._id)" class="button-delete">Borrar</a>
+                                    <a (click)="openDialog(comment.comment, comment._id)" class="button-edit">Edit</a>
+                                    <a (click)="setConfirmEraseComment(comment._id)" class="button-delete">Delete</a>
                                 </span>
                             </p>
                             <p *ngIf="confirmDeleteComment==comment._id ">
                                 <span class="confirm">
-                                    ¿Estas seguro de ELIMINAR este Comentario?<br/>
+                                    ¿Are you sure you want to delete this comment?<br/>
                                 </span>
                                 <span class="commentbuttons">
-                                    <a (click)="setConfirmEraseComment('cancel')" class="button-edit">Cancelar</a>
-                                    <a (click)="deleteComment(comment._id)" class="button-delete">Eliminar definitivamente</a>
+                                    <a (click)="setConfirmEraseComment('cancel')" class="button-edit">Cancel</a>
+                                    <a (click)="deleteComment(comment._id)" class="button-delete">Yes Delete</a>
                                 </span>
                             </p>
                         </div>

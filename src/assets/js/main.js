@@ -29,6 +29,8 @@ $(document).ready(function() {
         $('span.'+idname).next().find('span').html(filename);
     }); 
 
+   
+
 });  
 
 //Resize #titleContent main.component.html

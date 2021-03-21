@@ -1,14 +1,4 @@
 
-#mat-dialog-0, #cdk-overlay-1, #mat-dialog-1{
-  background: rgba(17, 0, 0, 0.884);
-}
-
-#mat-dialog-0, .mat-dialog-container{
-  background: rgba(17, 0, 0, 0.884);
-  border: 5px solid red !important;
-  border-radius: 10px !important;
-}
-
 .commentscont{
   width: 600px;
   height: fit-content;

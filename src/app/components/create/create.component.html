@@ -4,37 +4,37 @@
         <h2>{{title}}</h2>
      
         <div class="message failed" *ngIf="status=='failed'">
-            El ARTICULO NO SE HA PODIDO CREAR
+            The article could not be created.
         </div>
 
 
         <form class="custom-form" #projectForm="ngForm" (ngSubmit)="onSubmit(projectForm)">
             <p>
-                <input class="inputForm" type="text" name="name" #name="ngModel" [(ngModel)]="project.name" placeholder="Nombre" required/>
+                <input class="inputForm" type="text" name="name" #name="ngModel" [(ngModel)]="project.name" placeholder="Game" required/>
                 <span class="form_error" *ngIf="name.touched && !name.valid">
-                    <strong>*El Nombre es Obligatorio</strong>
+                    <strong>*Name is required</strong>
                 </span>
             </p>
             <p>
-                <textarea class="inputForm" name="description" #description="ngModel" [(ngModel)]="project.description" placeholder="Descripcion" required>
+                <textarea class="inputForm" name="description" #description="ngModel" [(ngModel)]="project.description" placeholder="Description" required>
                 </textarea>
                 <span class="form_error" *ngIf="description.touched && !description.valid">
-                    <strong>*La Descripcion es Obligatoria</strong>
+                    <strong>*Description is required</strong>
                 </span>
             </p>
             <p>
-                <input class="inputForm" type="text" name="category" #category="ngModel" [(ngModel)]="project.category" placeholder="Tipo de Vehiculos" required/>
+                <input class="inputForm" type="text" name="category" #category="ngModel" [(ngModel)]="project.category" placeholder="Type of Vehicle" required/>
                 <span class="form_error" *ngIf="category.touched && !category.valid">
-                    <strong>*El tipo de Vehiculo es Obligatorio</strong>
+                    <strong>*Type of Vehicle is required</strong>
                 </span>
             </p>
             <p>
-                <input class="inputForm year" type="number" name="year" #year="ngModel" [(ngModel)]="project.year" placeholder="Año de lanzamiento:"/>
+                <input class="inputForm year" type="number" name="year" #year="ngModel" [(ngModel)]="project.year" placeholder="Year of launch:"/>
             </p>
             <p>
-                <input class="inputForm" type="text" name="langs" #langs="ngModel" [(ngModel)]="project.langs" placeholder="Disponible en:" required/>
+                <input class="inputForm" type="text" name="langs" #langs="ngModel" [(ngModel)]="project.langs" placeholder="Available for:" required/>
                 <span class="form_error" *ngIf="langs.touched && !langs.valid">
-                    <strong>*Los dispositivos son Obligatorios</strong>
+                    <strong>*Availability is required</strong>
                 </span>
             </p>
             <div>
@@ -53,11 +53,11 @@
             </span>
 
             <label for="image">
-                <div class="indicador"><span>Subir Imagen</span></div>
+                <div class="indicador"><span>Upload Image</span></div>
             </label> 
 
             <span class="editbuttons">
-                <div *ngIf="project._id" [routerLink]="['/proyecto', project._id]" class="button-cancel">Cancelar</div>
+                <div *ngIf="project._id" [routerLink]="['/proyecto', project._id]" class="button-cancel">Cancel</div>
                 <input class="sendButton" type="submit" value="Enviar" [disabled]="!projectForm.form.valid"/>
             </span>
         </form>

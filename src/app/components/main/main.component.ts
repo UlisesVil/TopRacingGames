@@ -20,12 +20,14 @@ export class MainComponent implements OnInit {
 
   ngOnInit(): void {
 
-    function adjustHeight(){        
-      var width = $(window).width();
-      $('#title').height(width*.575);  
-    }
-    window.addEventListener('resize', adjustHeight);
+    $(document).ready(this.adjustHeight);
+    window.addEventListener('resize', this.adjustHeight);
+   
+  }
 
+  adjustHeight(){        
+    var width = $(window).width();
+    $('#title').height(width*.575);  
   }
   
 }

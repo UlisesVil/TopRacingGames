@@ -40,23 +40,30 @@ p{
 }
 
 .project{
-    width: 30%;
+    width: 50%;
     min-width: 400px;
     height: fit-content;
     margin-left: 20px;
     margin-right: 20px;
     margin-bottom: 30px;
     text-align: center;
+    overflow: hidden;
 }
 
 .project .image{
+    position: relative;
     width: 100%;
     overflow: hidden;
 }
 
-.project img{
+.gameImg{
     display: block;
     width: 100%;
+    transition: all 1s;
+}
+
+.gameImg:hover{
+    transform: scale(1.5);
 }
 
 .project a{
