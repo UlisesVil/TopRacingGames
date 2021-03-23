@@ -14,13 +14,14 @@
     font-family: FugazOne;
     src: url(../fonts/FugazOne.ttf) format('truetype');
 }
-
 @font-face{
     font-family: SigmarOne;
     src: url(../fonts/SigmarOne.ttf) format('truetype');
 }
-
-
+@font-face{
+    font-family: K2D;
+    src: url(../fonts/K2D-Regular.ttf) format('truetype');
+}
 
 *{
     margin: 0px;
@@ -173,7 +174,6 @@ form input[disabled]{
     }
 
 }
-
 
 #mat-dialog-0, .mat-dialog-container{
     background: rgba(17, 0, 0, 0.884);

@@ -44,7 +44,7 @@ h2{
 .description{
   width: 100%;
   text-align: justify;
-  font-family: russoOne;
+  font-family: K2D;
   font-size: 20px;
   line-height: 25px;
 }
@@ -178,7 +178,7 @@ h3{
   padding: 10px 10px;
   border-bottom: 1px solid red;
   box-sizing: border-box;
-  font-family: FugazOne;
+  font-family: K2D;
   font-size: 20px;
   line-height: 25px;
 }
