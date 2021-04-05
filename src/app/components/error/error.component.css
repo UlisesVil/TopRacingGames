@@ -1,0 +1,41 @@
+.errorMain{
+    width: 100%;
+    height: 91vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    background: url(../../../assets/img/images/background1.jpg);
+    background-attachment: fixed;
+    background-size: cover;
+    background-position: center;
+    
+}
+.generalCont{
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    font-size: calc(1em + .5vw);
+}
+.errorCont{
+    width: 50%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    font-size: calc(1em + 22vw);
+    padding: .35em;
+}
+.errorNum{
+    color: greenyellow;
+}
+a{
+    text-decoration: none;
+    color: greenyellow;
+}
+a:hover{
+    color: indianred;
+}
+

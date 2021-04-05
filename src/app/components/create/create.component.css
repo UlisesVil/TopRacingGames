@@ -28,24 +28,24 @@ h2{
 .custom-form {
   min-width: 300px;
   width: 100%;
-  margin: 20px auto 0px;
-  padding: 2rem 3rem;
-  border-radius: 2.5rem;
-  box-shadow: 13px 13px 20px #fc0000, -13px -13px 20px #042b72;
   color: white;
   text-shadow: 5px 5px 5px black;
   background-image: url(../../../assets/img/flag.jpg);
   background-size: cover;
   box-sizing: border-box;
+  margin: 20px auto 0px;
+  padding: 2rem 3rem;
+  border-radius: 2.5rem;
+  box-shadow: 13px 13px 20px #fc0000, -13px -13px 20px #042b72;
 }
 
 .inputForm{
   display: block;
   width: 95%;
-  margin: 2rem 0;
   border-radius: 0.5rem;
   border: none;
   padding: 1rem 0 1rem 1rem;
+  margin: 2rem 0;
   background: #ebf5fc;
   color: black;
 }
@@ -81,11 +81,11 @@ h2{
 }
 
 .labelyear{
-    color: black;
+  color: black;
 }
 
 .year{
-    margin-top: 5px;
+  margin-top: 5px;
 }
 
 input[type=file]#image{
@@ -165,15 +165,14 @@ label[for="image"] {
   background-color: #e7741693;
   border: 1px solid rgb(255, 145, 0);
   border-left: 8px solid rgb(255, 145, 0);
-   
 }
 
 .button-cancel:hover{
-    top: -3px;
-    box-shadow: 0px 0px 20px red;
+  top: -3px;
+  box-shadow: 0px 0px 20px red;
 }
 
 .button-cancel:active{
-    top: 2px;
-    box-shadow: 0px 0px 20px rgb(11, 2, 143);
+  top: 2px;
+  box-shadow: 0px 0px 20px rgb(11, 2, 143);
 }

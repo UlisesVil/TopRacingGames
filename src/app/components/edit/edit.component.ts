@@ -3,7 +3,7 @@ import { Project } from '../../models/project';
 import { ProjectService } from '../../services/project.service';
 import { UploadService } from '../../services/upload.service';
 import { Global } from '../../services/global';
-import { Router, ActivatedRoute, Params } from '@angular/router';
+import { Router, ActivatedRoute } from '@angular/router';
 declare var $:any;
 
 @Component({

@@ -1,2 +1,4 @@
-# iconMovieCars
-Angular App Dedicated to Icon Movie Cars using an API Res and MongoDB Atlas
+# Racing Games
+Angular App Dedicated to Racing Games using an API Res and MongoDB Atlas
+
+

@@ -1,17 +1,17 @@
 <div class="commentscont">
     <form class="custom-form" #commentForm="ngForm" (ngSubmit)="onSubmit(commentForm)">
-        <div class="titleform">Edita tu Comentario!!!</div>
+        <div class="titleform">Edit your Comment!!!</div>
         <p>
             <input class="inputForm" type="hidden" name="commentId" #commentId="ngModel" [(ngModel)]="data.commentId" required/> 
             <textarea class="inputForm" name="comment" #comment="ngModel" [(ngModel)]="data.comment" placeholder="Comentario" required></textarea>
             <span class="noComment" *ngIf="comment.touched && !comment.valid">
-                <strong>*Escribe algo para guardar tu comentario</strong>
+                <strong>*Write something to save your comment</strong>
             </span>
         </p>
-        <input id="sendButton" type="submit" value="Actualizar!!" [disabled]="!commentForm.form.valid"/>
+        <input id="sendButton" type="submit" value="Save!!" [disabled]="!commentForm.form.valid"/>
     </form>
 
     <div mat-dialog-actions>
-        <button class="button-cancel" (click)="onclickNo()">Cancelar</button>
+        <button class="button-cancel" (click)="onclickNo()">Cancel</button>
     </div>
 </div>

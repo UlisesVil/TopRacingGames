@@ -1,6 +1,10 @@
 .container{
     width: 100%;
     margin: 0px auto;
+    background: url(../../../assets/img/images/back10.jpg);
+    background-attachment: fixed;
+    background-position: center;
+    background-size: cover;
 }
 
 .detailcont{
@@ -9,10 +13,12 @@
 }
 
 h2{
+    margin: 0px 0px 30px;
+    padding-top: 20px;
     font-family: russoOne;
     text-align: center;
-    margin: 10px 0px 30px;
     font-size: 30px;
+    color: yellowgreen;
 }
 
 h3{
@@ -48,13 +54,22 @@ p{
     margin-bottom: 30px;
     text-align: center;
     overflow: hidden;
+    background: rgba(0, 0, 0, 0.7);
+    border-radius: 10px;
+}
+
+.project:hover{
+    box-shadow: 0 0 30px 10px yellowgreen;
 }
 
 .project .image{
     position: relative;
     width: 100%;
     overflow: hidden;
+    border-top-right-radius: 10px;
+    border-top-left-radius: 10px;
 }
+
 
 .gameImg{
     display: block;
@@ -70,6 +85,10 @@ p{
     width: 100%;
     text-decoration: none;
     color: black;
+}
+
+.project h3:hover, .project p:hover{
+    color: yellowgreen;
 }
 
 @media screen and (max-width: 800px){

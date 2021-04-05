@@ -52,7 +52,9 @@
 .linkNav:hover,
 .actived{      
   background: rgba(70, 0, 0, 0.8);
-  border-radius: 30px;
+  border-radius: 10px;
+  text-shadow: 3px 3px 10px rgb(253, 0, 0);
+  box-shadow: inset 0px 0px 9px rgb(253, 0, 0);
 }
 
 .ulToolbar{
@@ -74,7 +76,7 @@
 
 .linkToolbar{
   display: inline-block;
-  height: fit-content;
+  height: 10px;
   padding-right: 20px;
   padding-left: 20px;
   text-decoration: none;
@@ -87,7 +89,9 @@
 .linkToolbar:hover,
 .actived{      
   background: rgba(70, 0, 0, 0.8);
-  border-radius: 30px;
+  border-radius: 10px;
+  text-shadow: 3px 3px 10px rgb(253, 0, 0);
+  box-shadow: inset 0px 0px 9px rgb(253, 0, 0);
 }
 
 @media (max-width: 800px){

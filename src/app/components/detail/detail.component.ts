@@ -4,11 +4,10 @@ import { Comment } from '../../models/comment';
 import { ProjectService } from '../../services/project.service';
 import { CommentService } from '../../services/comment.service';
 import { Global } from '../../services/global';
-import { Router, ActivatedRoute, Params } from '@angular/router';
+import { Router, ActivatedRoute } from '@angular/router';
 import { MatDialog } from '@angular/material/dialog';
 import { CommentDialogComponent } from '../../components/comment-dialog/comment-dialog.component';
 import { DialogCommentDisabledComponent } from '../../components/dialog-comment-disabled/dialog-comment-disabled.component';
-import { localizedString } from '@angular/compiler/src/output/output_ast';
 declare var $:any;
 
 @Component({
@@ -68,8 +67,6 @@ export class DetailComponent implements OnInit {
       response => {
         this.project = response.project;
         this.text = this.project.description.split('-');
-        console.log(this.text);
-        
       },
       error => {
         console.log(<any>error);
