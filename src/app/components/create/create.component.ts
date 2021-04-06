@@ -38,6 +38,8 @@ export class CreateComponent implements OnInit {
       this.role=payload["role"];
       this.TOKEN_STRING = localStorage.getItem("token");
     }
+
+    $(document).ready(this.buttonUpload);
   }
 
   onSubmit(form){
@@ -80,5 +82,14 @@ export class CreateComponent implements OnInit {
         $('#preview').after('<img src="'+e.target.result+'" width="100%" />'); 
       } 
     }   
+  }
+
+  buttonUpload(){
+    $('input[type=file]').change(function(){
+      console.log('si pasa');
+      var filename = $(this).val().split('\\').pop();
+      var idname = $(this).attr('id');
+      $('span.'+idname).next().find('span').html(filename);
+    }); 
   }
 }

@@ -22,7 +22,7 @@ export class MainComponent implements OnInit {
 
     $(document).ready(this.adjustHeight);
     window.addEventListener('resize', this.adjustHeight);
-   
+    
   }
 
   adjustHeight(){        

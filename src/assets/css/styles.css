@@ -96,6 +96,13 @@ body{
         color: white;  
     }
 
+/*Modal comment inactive*/   
+    #mat-dialog-0, .mat-dialog-container{
+        background: rgba(17, 0, 0, 0.884);
+        border: 5px solid red !important;
+        border-radius: 10px !important;
+    }
+
 /*Footer*/
     footer{
         position: fixed;
@@ -178,6 +185,9 @@ body{
         color: yellowgreen;
     }
 
+
+
+/*BxSlider and footer responsive*/
 @media screen and (max-width: 500px){
 
     .bx-pager, .bx-default-pager{
@@ -187,10 +197,4 @@ body{
         font-size: 10px;
     }
 
-}
-
-#mat-dialog-0, .mat-dialog-container{
-    background: rgba(17, 0, 0, 0.884);
-    border: 5px solid red !important;
-    border-radius: 10px !important;
 }

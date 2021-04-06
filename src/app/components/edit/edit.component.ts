@@ -44,6 +44,7 @@ export class EditComponent implements OnInit {
       this.role=payload["role"];
       this.TOKEN_STRING = localStorage.getItem("token");
     }
+
   }
 
   getProject(id){
@@ -103,5 +104,4 @@ export class EditComponent implements OnInit {
       } 
     } 
   }
-  
 }

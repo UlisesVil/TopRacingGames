@@ -36,6 +36,8 @@ export class MainNavComponent {
       this.role=payload["role"];
       this.TOKEN_STRING = localStorage.getItem("token");
     }
+
+    $(document).ready(this.navMenu);
     
   }
 
@@ -52,6 +54,39 @@ export class MainNavComponent {
     $('#transparentWall').attr('style','background:black; width: 100%; height: 100vh; ');
     $('mat-toolbar').attr('style','background:black;'); 
     $('#pngmenu').attr('style','width: 100%; margin-top: 150px; display: inline;');
+  }
+
+  navMenu(){
+    $(".mat-drawer-backdrop").click(function(){
+      $('#transparentWall').removeAttr('style','background:black; width: 100%; height: 100vh; ');
+      $('mat-toolbar').removeAttr('style','background:black;');
+      $('#pngmenu').removeAttr('style','width: 100%; margin-top: 150px; display: inline;');
+      $('#pngmenu').attr('style','display: none;');
+    });
+    $(".linkNav").click(function(){
+        $('#transparentWall').removeAttr('style','background:black; width: 100%; height: 100vh; ');
+        $('mat-toolbar').removeAttr('style','background:black; display:none');
+        $('#pngmenu').removeAttr('style','width: 100%; margin-top: 150px; display: inline;');  
+        $('#pngmenu').attr('style','display: none;');
+    });
+    $("#buttonNav2").click(function(){
+        $('#transparentWall').removeAttr('style','background:black; width: 100%; height: 100vh; ');
+        $('mat-toolbar').removeAttr('style','background:black; display:none');
+        $('#pngmenu').removeAttr('style','width: 100%; margin-top: 150px; display: inline;');
+        $('#pngmenu').attr('style','display: none;');
+    });
+
+    function rezise(){
+      let width=$(window).width();
+      if(width>=600){
+        $("#transparentWall").attr('style','display:none;');
+        $(".mat-drawer-backdrop").attr('style','display:none;');
+      }else{
+        $("#transparentWall").removeAttr('style','display:none;');
+        $(".mat-drawer-backdrop").removeAttr('style','display:none;');
+      }
+    }
+    window.addEventListener('resize',rezise);
   }
 
 }
