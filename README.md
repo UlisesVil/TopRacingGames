@@ -34,6 +34,7 @@ In the Gallery section, the BxSlider library will display images related to the 
 
 
 link to the API: https://top-racing-games-api.herokuapp.com
+
 link to the site: http://top-racing-games.mygamesonline.org
 
 
