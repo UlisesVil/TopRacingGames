@@ -1,4 +1,4 @@
-# Racing Games
+# Top Racing Games (Angular).
 
 This fully Responsive application is available on the web, built-in Angular on the Frontend, and communicates with a Node JS REST API, deployed on Heroku on the backend, and the database comes from Mongo DB Atlas.
 
