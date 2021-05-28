@@ -33,3 +33,7 @@ When the user selects a game, it shows us the complete information related to it
 In the Gallery section, the BxSlider library will display images related to the game in this application.
 
 
+link to the API: https://top-racing-games-api.herokuapp.com
+link to the site: http://top-racing-games.mygamesonline.org
+
+
